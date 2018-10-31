@@ -28,3 +28,6 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 - [ ] Custom kaart in Thingsboard
 - [ ] Low Power emission in D7 en LoRa
 - [ ] Accelerometer
+- [ ] Kaart fingerprinting maken
+- [ ] database maken (MongoDB)
+- [ ] meetapplicatie maken
