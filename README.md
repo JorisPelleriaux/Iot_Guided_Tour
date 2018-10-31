@@ -14,7 +14,7 @@ Verder wordt de accelerometer gebruikt om het systeem in deep sleep te brengen. 
 
 **OUTDOOR**
 
-Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote afstand low-power te traceren. We gebruiken hiervoor de GPS-coördinaten die we versturen via het LoRaWAN netwerk.
+Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote afstand low-power LoRaWAN-triangulatie uit te voeren. We gebruiken hiervoor de GPS-coördinaten die we versturen via het LoRaWAN netwerk.
 
 
 ## TODO
