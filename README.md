@@ -10,7 +10,7 @@ Zowel indoor als outdoor data wordt gemanaged door Thingsboard. Dit door zijn ee
 **INDOOR**
 
 Aan de hand van D7 fingerprinting kunnen we de bezoeker nauwkeurig traceren binnenin het museum. De nauwkeurigheid van dit systeem hangt af van de duur van het trainingsproces. Uit verder onderzoek zal kunnen blijken of we met deze technologie genoeg hebben.
-Verder wordt de accelerometer gebruikt om het systeem in deep sleep te brengen. Wanneer de gebruiker stilstaat voor een object hoeft er niet onnodig data verzonder te worden.
+Verder wordt de accelerometer gebruikt om het systeem in deep sleep te brengen. Wanneer de gebruiker stilstaat voor een object hoeft er niet onnodig data verzonden te worden.
 
 **OUTDOOR**
 
