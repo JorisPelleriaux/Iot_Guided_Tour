@@ -19,3 +19,7 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 
 ## TODO
 - [ ] Fingerprinting
+- [ ] GPS uitlezen
+- [ ] Custom kaart in Thingsboard
+- [ ] Low Power emission in D7 en LoRa
+- [ ] Accelerometer
