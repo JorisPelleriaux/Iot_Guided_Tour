@@ -18,4 +18,4 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 
 
 ##TODO
-[ ] Fingerprinting
+-[ ] Fingerprinting
