@@ -16,6 +16,11 @@ Verder wordt de accelerometer gebruikt om het systeem in deep sleep te brengen. 
 
 Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote afstand low-power LoRaWAN-triangulatie uit te voeren. We gebruiken hiervoor de GPS-coördinaten die we versturen via het LoRaWAN netwerk.
 
+## Hardware
+NUCLEO-L496ZG (STM32 Nucleo-144 development board)
+OCTA-Connect development board
+sierra wireless xm1110 (GNSS positioning module)
+CMWX1ZZABZ (LPWAN wireless module)
 
 ## TODO
 - [ ] Fingerprinting
