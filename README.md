@@ -29,5 +29,6 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 - [ ] Low Power emission in D7 en LoRa
 - [ ] Accelerometer
 - [ ] Kaart fingerprinting maken
+- [ ] RFID onderzoek
 - [ ] database maken (MongoDB)
 - [ ] meetapplicatie maken
