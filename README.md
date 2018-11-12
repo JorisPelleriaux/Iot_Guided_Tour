@@ -1,7 +1,7 @@
 # Iot_Guided_Tour
 ## Concept
 
-Met dit project proberen we de IoT-business uit te breiden tot in de musea. Waar audio- en videotours de lokale gidsen al vervangen, willen we dit verder uitbreiden naar het automatiseren hiervan. Een bezoeker wil graag, zonder enige moeite, informatie ontvangen van het object waar hij/zij zich voor begeeft. Dit voor zowel indoor als outdoor exposities.
+Met dit project proberen we de IoT-business uit te breiden tot in musea. Waar audio- en videotours de lokale gidsen al vervangen, willen we dit verder uitbreiden naar het automatiseren hiervan. Een bezoeker wil graag, zonder enige moeite, informatie ontvangen van het object waar hij/zij zich voor begeeft. Dit voor zowel indoor als outdoor exposities.
 
 ## Technologie
 
@@ -23,12 +23,12 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 * CMWX1ZZABZ (LPWAN wireless module)
 
 ## TODO
-- [ ] Fingerprinting
-- [ ] GPS uitlezen
+- [ ] Fingerprinting (Joris & Axel)
+- [ ] GPS uitlezen (Arne)
 - [ ] Custom kaart in Thingsboard
 - [ ] Low Power emission in D7 en LoRa
 - [ ] Accelerometer
-- [ ] Kaart fingerprinting maken
+- [ ] Kaart fingerprinting maken (Axel)
 - [ ] RFID onderzoek
 - [ ] database maken (MongoDB)
-- [ ] meetapplicatie maken
+- [ ] D7 berichten met pushbutton (Joris)
