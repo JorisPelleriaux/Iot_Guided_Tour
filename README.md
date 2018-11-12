@@ -28,7 +28,7 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 - [ ] Custom kaart in Thingsboard
 - [ ] Low Power emission in D7 en LoRa
 - [ ] Accelerometer
-- [ ] Kaart fingerprinting maken (Axel)
+- [x] Kaart fingerprinting maken (Axel)
 - [ ] RFID onderzoek
-- [ ] database maken (MongoDB)
-- [ ] D7 berichten met pushbutton (Joris)
+- [x] database maken (MongoDB)
+- [x] D7 berichten met pushbutton (Joris)
