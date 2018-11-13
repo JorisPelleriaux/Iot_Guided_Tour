@@ -4118,7 +4118,7 @@ END GROUP
                 0x0000000000100000                _fw_rom_length = DEFINED (_fw_rom_length)?_fw_rom_length:(_rom_length - _rom_offset)
                 0x0000000000000001                ASSERT ((_fw_rom_length <= (_rom_length - _rom_offset)), Specified firmware size does not fit in ROM)
 
-.text           0x0000000008000000     0x3980
+.text           0x0000000008000000     0x39c0
                 0x0000000008000000                . = ALIGN (0x4)
                 0x0000000008000000                _sfixed = .
                 0x0000000008000000                _isr_vectors = DEFINED (_isr_vectors)?_isr_vectors:.
@@ -4492,379 +4492,379 @@ END GROUP
                 0x000000000800148c       0x1c /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
                 0x000000000800148c                on_modem_write_file_data_callback
  .text.thread_handler
-                0x00000000080014a8       0x54 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
- .text.cb       0x00000000080014fc       0x5c /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x00000000080014a8       0x78 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+ .text.cb       0x0000000008001520       0x70 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
  .text.startup.main
-                0x0000000008001558       0x74 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
-                0x0000000008001558                main
+                0x0000000008001590       0x74 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x0000000008001590                main
  .text.auto_init
-                0x00000000080015cc        0xe /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
-                0x00000000080015cc                auto_init
- *fill*         0x00000000080015da        0x2 
+                0x0000000008001604        0xe /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
+                0x0000000008001604                auto_init
+ *fill*         0x0000000008001612        0x2 
  .text.auto_init_gpio
-                0x00000000080015dc       0x74 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
-                0x00000000080015dc                auto_init_gpio
+                0x0000000008001614       0x74 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+                0x0000000008001614                auto_init_gpio
  .text._mutex_lock
-                0x0000000008001650       0x60 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
-                0x0000000008001650                _mutex_lock
+                0x0000000008001688       0x60 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
+                0x0000000008001688                _mutex_lock
  .text.mutex_unlock
-                0x00000000080016b0       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
-                0x00000000080016b0                mutex_unlock
+                0x00000000080016e8       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
+                0x00000000080016e8                mutex_unlock
  .text.cortexm_init
-                0x00000000080016fc       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
-                0x00000000080016fc                cortexm_init
+                0x0000000008001734       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
+                0x0000000008001734                cortexm_init
  .text.stmclk_init_sysclk
-                0x0000000008001748       0x84 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
-                0x0000000008001748                stmclk_init_sysclk
+                0x0000000008001780       0x84 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
+                0x0000000008001780                stmclk_init_sysclk
  .text.process_serial_frame
-                0x00000000080017cc       0xe8 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- .text.rx_cb    0x00000000080018b4       0x1c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- .text.send     0x00000000080018d0       0x44 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008001804       0xe8 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ .text.rx_cb    0x00000000080018ec       0x1c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ .text.send     0x0000000008001908       0x44 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .text.send_read_file
-                0x0000000008001914       0x38 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x000000000800194c       0x38 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .text.send_unsolicited_response
-                0x000000000800194c       0x60 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008001984       0x60 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .text.rx_thread
-                0x00000000080019ac       0xd0 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
-                0x00000000080019ac                rx_thread
- *fill*         0x0000000008001a7c        0x4 
+                0x00000000080019e4       0xd0 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x00000000080019e4                rx_thread
+ *fill*         0x0000000008001ab4        0x4 
  .text.block_until_cmd_completed.constprop.3
-                0x0000000008001a80       0x54 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008001ab8       0x54 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .text.modem_init
-                0x0000000008001ad4       0x74 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
-                0x0000000008001ad4                modem_init
+                0x0000000008001b0c       0x74 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008001b0c                modem_init
  .text.alloc_command
-                0x0000000008001b48       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
-                0x0000000008001b48                alloc_command
+                0x0000000008001b80       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008001b80                alloc_command
  .text.modem_read_file
-                0x0000000008001b94       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
-                0x0000000008001b94                modem_read_file
+                0x0000000008001bcc       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008001bcc                modem_read_file
  .text.modem_send_unsolicited_response
-                0x0000000008001bc4       0x44 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
-                0x0000000008001bc4                modem_send_unsolicited_response
+                0x0000000008001bfc       0x44 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008001bfc                modem_send_unsolicited_response
  .text.d7ap_addressee_id_length
-                0x0000000008001c08       0x1a /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
- *fill*         0x0000000008001c22        0x2 
+                0x0000000008001c40       0x1a /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+ *fill*         0x0000000008001c5a        0x2 
  .text.unlikely.alp_parse_file_offset_operand.part.1
-                0x0000000008001c24       0x10 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001c5c       0x10 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
  .text.alp_parse_length_operand
-                0x0000000008001c34       0x34 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001c34                alp_parse_length_operand
+                0x0000000008001c6c       0x34 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001c6c                alp_parse_length_operand
  .text.alp_append_length_operand
-                0x0000000008001c68       0x78 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001c68                alp_append_length_operand
+                0x0000000008001ca0       0x78 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001ca0                alp_append_length_operand
  .text.alp_parse_file_offset_operand
-                0x0000000008001ce0       0x2e /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001ce0                alp_parse_file_offset_operand
+                0x0000000008001d18       0x2e /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001d18                alp_parse_file_offset_operand
  .text.parse_operand_file_data
-                0x0000000008001d0e       0x3c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001d46       0x3c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
  .text.alp_append_file_offset_operand
-                0x0000000008001d4a       0x1c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001d4a                alp_append_file_offset_operand
- *fill*         0x0000000008001d66        0x2 
+                0x0000000008001d82       0x1c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001d82                alp_append_file_offset_operand
+ *fill*         0x0000000008001d9e        0x2 
  .text.alp_append_forward_action
-                0x0000000008001d68       0x84 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001d68                alp_append_forward_action
+                0x0000000008001da0       0x84 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001da0                alp_append_forward_action
  .text.alp_append_return_file_data_action
-                0x0000000008001dec       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001dec                alp_append_return_file_data_action
+                0x0000000008001e24       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001e24                alp_append_return_file_data_action
  .text.alp_parse_action
-                0x0000000008001e38      0x148 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001e38                alp_parse_action
+                0x0000000008001e70      0x148 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001e70                alp_parse_action
  .text.alp_append_tag_request_action
-                0x0000000008001f80       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001f80                alp_append_tag_request_action
+                0x0000000008001fb8       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001fb8                alp_append_tag_request_action
  .text.alp_append_read_file_data_action
-                0x0000000008001fb0       0x48 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
-                0x0000000008001fb0                alp_append_read_file_data_action
+                0x0000000008001fe8       0x48 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+                0x0000000008001fe8                alp_append_read_file_data_action
  .text.fifo_init
-                0x0000000008001ff8        0xe /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x0000000008001ff8                fifo_init
+                0x0000000008002030        0xe /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x0000000008002030                fifo_init
  .text.fifo_put
-                0x0000000008002006       0x66 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x0000000008002006                fifo_put
+                0x000000000800203e       0x66 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x000000000800203e                fifo_put
  .text.fifo_put_byte
-                0x000000000800206c       0x16 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x000000000800206c                fifo_put_byte
+                0x00000000080020a4       0x16 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x00000000080020a4                fifo_put_byte
  .text.fifo_get_size
-                0x0000000008002082       0x14 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x0000000008002082                fifo_get_size
- *fill*         0x0000000008002096        0x2 
+                0x00000000080020ba       0x14 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x00000000080020ba                fifo_get_size
+ *fill*         0x00000000080020ce        0x2 
  .text.fifo_init_subview
-                0x0000000008002098       0x48 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x0000000008002098                fifo_init_subview
+                0x00000000080020d0       0x48 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x00000000080020d0                fifo_init_subview
  .text.fifo_peek
-                0x00000000080020e0       0x5e /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x00000000080020e0                fifo_peek
+                0x0000000008002118       0x5e /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x0000000008002118                fifo_peek
  .text.fifo_pop
-                0x000000000800213e       0x2a /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x000000000800213e                fifo_pop
+                0x0000000008002176       0x2a /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x0000000008002176                fifo_pop
  .text.fifo_skip
-                0x0000000008002168       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
-                0x0000000008002168                fifo_skip
- .text.write    0x0000000008002198       0x1c /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
- .text.read     0x00000000080021b4       0x2a /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+                0x00000000080021a0       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+                0x00000000080021a0                fifo_skip
+ .text.write    0x00000000080021d0       0x1c /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+ .text.read     0x00000000080021ec       0x2a /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
  .text.saul_notsup
-                0x00000000080021de        0x6 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
-                0x00000000080021de                saul_notsup
+                0x0000000008002216        0x6 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
+                0x0000000008002216                saul_notsup
  .text.saul_reg_add
-                0x00000000080021e4       0x2c /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
-                0x00000000080021e4                saul_reg_add
+                0x000000000800221c       0x2c /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
+                0x000000000800221c                saul_reg_add
  .text.stmclk_enable_hsi
-                0x0000000008002210       0x18 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
-                0x0000000008002210                stmclk_enable_hsi
+                0x0000000008002248       0x18 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
+                0x0000000008002248                stmclk_enable_hsi
  .text.stmclk_disable_hsi
-                0x0000000008002228        0x2 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
-                0x0000000008002228                stmclk_disable_hsi
+                0x0000000008002260        0x2 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
+                0x0000000008002260                stmclk_disable_hsi
  .text._mutex_timeout
-                0x000000000800222a       0x3c /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
- *fill*         0x0000000008002266        0x2 
+                0x0000000008002262       0x3c /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
+ *fill*         0x000000000800229e        0x2 
  .text.xtimer_mutex_lock_timeout
-                0x0000000008002268       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
-                0x0000000008002268                xtimer_mutex_lock_timeout
+                0x00000000080022a0       0x4c /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
+                0x00000000080022a0                xtimer_mutex_lock_timeout
  .text.__libc_init_array
-                0x00000000080022b4       0x48 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-init.o)
-                0x00000000080022b4                __libc_init_array
- .text.memcpy   0x00000000080022fc       0x16 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memcpy-stub.o)
-                0x00000000080022fc                memcpy
- .text.memset   0x0000000008002312       0x10 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memset.o)
-                0x0000000008002312                memset
- *fill*         0x0000000008002322        0x2 
- .text.printf   0x0000000008002324       0x30 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-printf.o)
-                0x0000000008002324                printf
-                0x0000000008002324                iprintf
- .text._puts_r  0x0000000008002354       0xb8 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-puts.o)
-                0x0000000008002354                _puts_r
- .text.puts     0x000000000800240c       0x10 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-puts.o)
-                0x000000000800240c                puts
+                0x00000000080022ec       0x48 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-init.o)
+                0x00000000080022ec                __libc_init_array
+ .text.memcpy   0x0000000008002334       0x16 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000008002334                memcpy
+ .text.memset   0x000000000800234a       0x10 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memset.o)
+                0x000000000800234a                memset
+ *fill*         0x000000000800235a        0x2 
+ .text.printf   0x000000000800235c       0x30 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-printf.o)
+                0x000000000800235c                printf
+                0x000000000800235c                iprintf
+ .text._puts_r  0x000000000800238c       0xb8 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-puts.o)
+                0x000000000800238c                _puts_r
+ .text.puts     0x0000000008002444       0x10 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-puts.o)
+                0x0000000008002444                puts
  .text.__swbuf_r
-                0x000000000800241c       0xa4 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wbuf.o)
-                0x000000000800241c                __swbuf_r
+                0x0000000008002454       0xa4 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wbuf.o)
+                0x0000000008002454                __swbuf_r
  .text.__swsetup_r
-                0x00000000080024c0       0xdc /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wsetup.o)
-                0x00000000080024c0                __swsetup_r
+                0x00000000080024f8       0xdc /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wsetup.o)
+                0x00000000080024f8                __swsetup_r
  .text.__sflush_r
-                0x000000000800259c      0x10c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fflush.o)
-                0x000000000800259c                __sflush_r
+                0x00000000080025d4      0x10c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fflush.o)
+                0x00000000080025d4                __sflush_r
  .text._fflush_r
-                0x00000000080026a8       0x54 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fflush.o)
-                0x00000000080026a8                _fflush_r
- .text.std      0x00000000080026fc       0x48 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+                0x00000000080026e0       0x54 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fflush.o)
+                0x00000000080026e0                _fflush_r
+ .text.std      0x0000000008002734       0x48 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x0000000008002744        0xc /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
-                0x0000000008002744                _cleanup_r
+                0x000000000800277c        0xc /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+                0x000000000800277c                _cleanup_r
  .text.__sfmoreglue
-                0x0000000008002750       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
-                0x0000000008002750                __sfmoreglue
- .text.__sinit  0x000000000800277c       0x60 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
-                0x000000000800277c                __sinit
- .text.__sfp    0x00000000080027dc       0x78 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
-                0x00000000080027dc                __sfp
+                0x0000000008002788       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008002788                __sfmoreglue
+ .text.__sinit  0x00000000080027b4       0x60 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+                0x00000000080027b4                __sinit
+ .text.__sfp    0x0000000008002814       0x78 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008002814                __sfp
  .text._fwalk_reent
-                0x0000000008002854       0x3c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fwalk.o)
-                0x0000000008002854                _fwalk_reent
+                0x000000000800288c       0x3c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fwalk.o)
+                0x000000000800288c                _fwalk_reent
  .text.__swhatbuf_r
-                0x0000000008002890       0x48 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-makebuf.o)
-                0x0000000008002890                __swhatbuf_r
+                0x00000000080028c8       0x48 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-makebuf.o)
+                0x00000000080028c8                __swhatbuf_r
  .text.__smakebuf_r
-                0x00000000080028d8       0x80 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-makebuf.o)
-                0x00000000080028d8                __smakebuf_r
- .text._free_r  0x0000000008002958       0x9c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-freer.o)
-                0x0000000008002958                _free_r
+                0x0000000008002910       0x80 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-makebuf.o)
+                0x0000000008002910                __smakebuf_r
+ .text._free_r  0x0000000008002990       0x9c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-freer.o)
+                0x0000000008002990                _free_r
  .text._malloc_r
-                0x00000000080029f4       0xb4 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x00000000080029f4                _malloc_r
+                0x0000000008002a2c       0xb4 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000008002a2c                _malloc_r
  .text.__sfputc_r
-                0x0000000008002aa8       0x2a /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000008002ae0       0x2a /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x0000000008002ad2       0x24 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x0000000008002ad2                __sfputs_r
- *fill*         0x0000000008002af6        0x2 
+                0x0000000008002b0a       0x24 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000008002b0a                __sfputs_r
+ *fill*         0x0000000008002b2e        0x2 
  .text._vfprintf_r
-                0x0000000008002af8      0x22c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x0000000008002af8                _vfiprintf_r
-                0x0000000008002af8                _vfprintf_r
+                0x0000000008002b30      0x22c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000008002b30                _vfiprintf_r
+                0x0000000008002b30                _vfprintf_r
  .text._printf_common
-                0x0000000008002d24       0xea /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008002d24                _printf_common
- *fill*         0x0000000008002e0e        0x2 
+                0x0000000008002d5c       0xea /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008002d5c                _printf_common
+ *fill*         0x0000000008002e46        0x2 
  .text._printf_i
-                0x0000000008002e10      0x224 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008002e10                _printf_i
- .text.__sread  0x0000000008003034       0x22 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
-                0x0000000008003034                __sread
+                0x0000000008002e48      0x224 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008002e48                _printf_i
+ .text.__sread  0x000000000800306c       0x22 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
+                0x000000000800306c                __sread
  .text.__swrite
-                0x0000000008003056       0x38 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
-                0x0000000008003056                __swrite
- .text.__sseek  0x000000000800308e       0x24 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
-                0x000000000800308e                __sseek
+                0x000000000800308e       0x38 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
+                0x000000000800308e                __swrite
+ .text.__sseek  0x00000000080030c6       0x24 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
+                0x00000000080030c6                __sseek
  .text.__sclose
-                0x00000000080030b2        0x8 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
-                0x00000000080030b2                __sclose
- *fill*         0x00000000080030ba        0x6 
- .text          0x00000000080030c0       0xa0 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memchr.o)
-                0x00000000080030c0                memchr
+                0x00000000080030ea        0x8 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
+                0x00000000080030ea                __sclose
+ *fill*         0x00000000080030f2        0xe 
+ .text          0x0000000008003100       0xa0 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memchr.o)
+                0x0000000008003100                memchr
  .text.__malloc_lock
-                0x0000000008003160        0x2 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-mlock.o)
-                0x0000000008003160                __malloc_lock
+                0x00000000080031a0        0x2 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-mlock.o)
+                0x00000000080031a0                __malloc_lock
  .text.__malloc_unlock
-                0x0000000008003162        0x2 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-mlock.o)
-                0x0000000008003162                __malloc_unlock
+                0x00000000080031a2        0x2 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-mlock.o)
+                0x00000000080031a2                __malloc_unlock
  *(.glue_7t)
- .glue_7t       0x0000000008003164        0x0 linker stubs
+ .glue_7t       0x00000000080031a4        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000008003164        0x0 linker stubs
+ .glue_7        0x00000000080031a4        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
  .rodata.bus_fault_default.str1.1
-                0x0000000008003164       0x12 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
+                0x00000000080031a4       0x12 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
  .rodata.debug_mon_default.str1.1
-                0x0000000008003176       0x12 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
+                0x00000000080031b6       0x12 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
  .rodata.dummy_handler_default.str1.1
-                0x0000000008003188        0xe /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
+                0x00000000080031c8        0xe /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
  .rodata.hard_fault_handler.str1.1
-                0x0000000008003196      0x1f4 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
+                0x00000000080031d6      0x1f4 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
  .rodata.mem_manage_default.str1.1
-                0x000000000800338a       0x13 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
+                0x00000000080033ca       0x13 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
  .rodata.nmi_default.str1.1
-                0x000000000800339d        0xc /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
+                0x00000000080033dd        0xc /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
  .rodata.usage_fault_default.str1.1
-                0x00000000080033a9       0x14 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
- *fill*         0x00000000080033bd        0x3 
+                0x00000000080033e9       0x14 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(vectors_cortexm.o)
+ *fill*         0x00000000080033fd        0x3 
  .rodata.uart_config
-                0x00000000080033c0       0x28 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(uart.o)
+                0x0000000008003400       0x28 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(uart.o)
  .rodata.assert_crash_message
-                0x00000000080033e8       0x12 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(panic.o)
-                0x00000000080033e8                assert_crash_message
+                0x0000000008003428       0x12 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(panic.o)
+                0x0000000008003428                assert_crash_message
  .rodata.core_panic.str1.1
-                0x00000000080033fa       0x2a /home/vagrant/RIOT/examples/Button/bin/octa/core.a(panic.o)
+                0x000000000800343a       0x2a /home/vagrant/RIOT/examples/Button/bin/octa/core.a(panic.o)
                                          0x30 (size before relaxing)
  .rodata.main_trampoline.str1.1
-                0x0000000008003424       0x49 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(kernel_init.o)
+                0x0000000008003464       0x49 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(kernel_init.o)
  .rodata.str1.1
-                0x000000000800346d        0xa /home/vagrant/RIOT/examples/Button/bin/octa/core.a(kernel_init.o)
- .rodata        0x0000000008003477        0x2 /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
+                0x00000000080034ad        0xa /home/vagrant/RIOT/examples/Button/bin/octa/core.a(kernel_init.o)
+ .rodata        0x00000000080034b7        0x2 /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
  .rodata.ps.str1.1
-                0x0000000008003479       0xfd /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
- *fill*         0x0000000008003576        0x2 
+                0x00000000080034b9       0xfd /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
+ *fill*         0x00000000080035b6        0x2 
  .rodata.state_names
-                0x0000000008003578       0x2c /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
+                0x00000000080035b8       0x2c /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
  .rodata.str1.1
-                0x00000000080035a4       0x5b /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
+                0x00000000080035e4       0x5b /home/vagrant/RIOT/examples/Button/bin/octa/ps.a(ps.o)
  .rodata.apbmul
-                0x00000000080035ff        0x2 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(cpu_common.o)
- *fill*         0x0000000008003601        0x3 
+                0x000000000800363f        0x2 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(cpu_common.o)
+ *fill*         0x0000000008003641        0x3 
  .rodata.timer_config
-                0x0000000008003604       0x20 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(timer.o)
- .rodata        0x0000000008003624        0xc /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x0000000008003644       0x20 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(timer.o)
+ .rodata        0x0000000008003664        0xc /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
  .rodata.cb.str1.1
-                0x0000000008003630       0x1b /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x0000000008003670       0x1b /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
  .rodata.main.str1.1
-                0x000000000800364b       0x57 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x000000000800368b       0x57 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
  .rodata.on_modem_command_completed_callback.str1.1
-                0x00000000080036a2       0x28 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x00000000080036e2       0x28 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
  .rodata.on_modem_return_file_data_callback.str1.1
-                0x00000000080036ca       0x3e /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x000000000800370a       0x3e /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
  .rodata.on_modem_write_file_data_callback.str1.1
-                0x0000000008003708       0x3d /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+                0x0000000008003748       0x3d /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
  .rodata.thread_handler.str1.1
-                0x0000000008003745       0x51 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
- *fill*         0x0000000008003796        0x2 
+                0x0000000008003785       0x51 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+ *fill*         0x00000000080037d6        0x2 
  .rodata.saul_gpio_params
-                0x0000000008003798       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+                0x00000000080037d8       0x30 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
  .rodata.str1.1
-                0x00000000080037c8       0x2e /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+                0x0000000008003808       0x2e /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
  .rodata.alloc_command.str1.1
-                0x00000000080037f6       0x1b /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008003836       0x1b /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .rodata.block_until_cmd_completed.constprop.3.str1.1
-                0x0000000008003811       0x18 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008003851       0x18 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .rodata.modem_init.str1.1
-                0x0000000008003829        0xe /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008003869        0xe /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .rodata.process_serial_frame.str1.1
-                0x0000000008003837       0x66 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x0000000008003877       0x66 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .rodata.rx_thread.str1.1
-                0x000000000800389d       0x26 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+                0x00000000080038dd       0x26 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
  .rodata.send.str1.1
-                0x00000000080038c3        0xc /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- *fill*         0x00000000080038cf        0x1 
+                0x0000000008003903        0xc /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ *fill*         0x000000000800390f        0x1 
  .rodata.gpio_in_saul_driver
-                0x00000000080038d0        0xc /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
-                0x00000000080038d0                gpio_in_saul_driver
+                0x0000000008003910        0xc /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+                0x0000000008003910                gpio_in_saul_driver
  .rodata.gpio_out_saul_driver
-                0x00000000080038dc        0xc /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
-                0x00000000080038dc                gpio_out_saul_driver
+                0x000000000800391c        0xc /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+                0x000000000800391c                gpio_out_saul_driver
  .rodata._global_impure_ptr
-                0x00000000080038e8        0x4 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-impure.o)
-                0x00000000080038e8                _global_impure_ptr
+                0x0000000008003928        0x4 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-impure.o)
+                0x0000000008003928                _global_impure_ptr
  .rodata.__sf_fake_stderr
-                0x00000000080038ec       0x20 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
-                0x00000000080038ec                __sf_fake_stderr
- .rodata.__sf_fake_stdin
-                0x000000000800390c       0x20 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
-                0x000000000800390c                __sf_fake_stdin
- .rodata.__sf_fake_stdout
                 0x000000000800392c       0x20 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
-                0x000000000800392c                __sf_fake_stdout
+                0x000000000800392c                __sf_fake_stderr
+ .rodata.__sf_fake_stdin
+                0x000000000800394c       0x20 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+                0x000000000800394c                __sf_fake_stdin
+ .rodata.__sf_fake_stdout
+                0x000000000800396c       0x20 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+                0x000000000800396c                __sf_fake_stdout
  .rodata._vfprintf_r.str1.1
-                0x000000000800394c       0x11 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000000800398c       0x11 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata._printf_i.str1.1
-                0x000000000800395d       0x22 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000000800399d       0x22 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008003980                . = ALIGN (0x4)
- *fill*         0x000000000800397f        0x1 
+                0x00000000080039c0                . = ALIGN (0x4)
+ *fill*         0x00000000080039bf        0x1 
  *(.init)
-                0x0000000008003980                . = ALIGN (0x4)
-                0x0000000008003980                __preinit_array_start = .
+                0x00000000080039c0                . = ALIGN (0x4)
+                0x00000000080039c0                __preinit_array_start = .
  *(.preinit_array)
-                0x0000000008003980                __preinit_array_end = .
-                0x0000000008003980                . = ALIGN (0x4)
-                0x0000000008003980                __init_array_start = .
+                0x00000000080039c0                __preinit_array_end = .
+                0x00000000080039c0                . = ALIGN (0x4)
+                0x00000000080039c0                __init_array_start = .
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
-                0x0000000008003980                __init_array_end = .
-                0x0000000008003980                . = ALIGN (0x4)
+                0x00000000080039c0                __init_array_end = .
+                0x00000000080039c0                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT_BY_NAME(.ctors.*))
  *crtend.o(.ctors)
-                0x0000000008003980                . = ALIGN (0x4)
+                0x00000000080039c0                . = ALIGN (0x4)
  *(.fini)
-                0x0000000008003980                . = ALIGN (0x4)
-                0x0000000008003980                __fini_array_start = .
+                0x00000000080039c0                . = ALIGN (0x4)
+                0x00000000080039c0                __fini_array_start = .
  *(.fini_array)
  *(SORT_BY_NAME(.fini_array.*))
-                0x0000000008003980                __fini_array_end = .
+                0x00000000080039c0                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT_BY_NAME(.dtors.*))
  *crtend.o(.dtors)
-                0x0000000008003980                . = ALIGN (0x4)
-                0x0000000008003980                _efixed = .
+                0x00000000080039c0                . = ALIGN (0x4)
+                0x00000000080039c0                _efixed = .
                 [!provide]                        PROVIDE (__exidx_start = .)
 
-.vfp11_veneer   0x0000000008003980        0x0
- .vfp11_veneer  0x0000000008003980        0x0 linker stubs
+.vfp11_veneer   0x00000000080039c0        0x0
+ .vfp11_veneer  0x00000000080039c0        0x0 linker stubs
 
-.v4_bx          0x0000000008003980        0x0
- .v4_bx         0x0000000008003980        0x0 linker stubs
+.v4_bx          0x00000000080039c0        0x0
+ .v4_bx         0x00000000080039c0        0x0 linker stubs
 
-.iplt           0x0000000008003980        0x0
- .iplt          0x0000000008003980        0x0 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
+.iplt           0x00000000080039c0        0x0
+ .iplt          0x00000000080039c0        0x0 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
 
-.igot.plt       0x0000000008003980        0x0
- .igot.plt      0x0000000008003980        0x0 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
+.igot.plt       0x00000000080039c0        0x0
+ .igot.plt      0x00000000080039c0        0x0 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
 
-.rel.dyn        0x0000000008003980        0x0
- .rel.iplt      0x0000000008003980        0x0 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
+.rel.dyn        0x00000000080039c0        0x0
+ .rel.iplt      0x00000000080039c0        0x0 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
                 [!provide]                        PROVIDE (__exidx_end = .)
-                0x0000000008003980                . = ALIGN (0x4)
+                0x00000000080039c0                . = ALIGN (0x4)
 
 .eh_frame
  *(.eh_frame)
-                0x0000000008003980                . = ALIGN (0x4)
-                0x0000000008003980                _etext = .
+                0x00000000080039c0                . = ALIGN (0x4)
+                0x00000000080039c0                _etext = .
 
 .stack          0x0000000020000000      0x200
  *(.puf)
@@ -4876,7 +4876,7 @@ END GROUP
                 0x0000000020000200                . = ALIGN (0x8)
                 0x0000000020000200                _estack = .
 
-.relocate       0x0000000020000200       0x98 load address 0x0000000008003980
+.relocate       0x0000000020000200       0x98 load address 0x00000000080039c0
                 0x0000000020000200                . = ALIGN (0x4)
                 0x0000000020000200                _srelocate = .
  *(.ramfunc .ramfunc.*)
@@ -4910,7 +4910,7 @@ END GROUP
  *fill*         0x0000000020000296        0x2 
                 0x0000000020000298                _erelocate = .
 
-.bss            0x0000000020000298     0x1760 load address 0x0000000008003a18
+.bss            0x0000000020000298     0x1760 load address 0x0000000008003a58
                 0x0000000020000298                . = ALIGN (0x4)
                 0x0000000020000298                _sbss = .
                 0x0000000020000298                _szero = .
@@ -5002,7 +5002,7 @@ END GROUP
                 0x0000000020050000                _eram = (ORIGIN (ram) + LENGTH (ram))
 OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x2e1a2
+.debug_info     0x0000000000000000    0x2e296
  .debug_info    0x0000000000000000      0x35e /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
  .debug_info    0x000000000000035e     0x1dd6 /home/vagrant/RIOT/examples/Button/bin/octa/newlib_syscalls_default/syscalls.o
  .debug_info    0x0000000000002134      0xde1 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(sched.o)
@@ -5026,22 +5026,22 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .debug_info    0x0000000000017ee0     0x1b14 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(timer.o)
  .debug_info    0x00000000000199f4      0x39e /home/vagrant/RIOT/examples/Button/bin/octa/tsrb.a(tsrb.o)
  .debug_info    0x0000000000019d92       0x3b /home/vagrant/RIOT/examples/Button/bin/octa/periph_common.a(init.o)
- .debug_info    0x0000000000019dcd     0x1d77 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
- .debug_info    0x000000000001bb44     0x13cd /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
- .debug_info    0x000000000001cf11     0x1709 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
- .debug_info    0x000000000001e61a      0xe50 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
- .debug_info    0x000000000001f46a     0x1170 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
- .debug_info    0x00000000000205da     0x1725 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
- .debug_info    0x0000000000021cff     0x29ed /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- .debug_info    0x00000000000246ec     0x22b5 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
- .debug_info    0x00000000000269a1     0x1258 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
- .debug_info    0x0000000000027bf9     0x17b4 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
- .debug_info    0x00000000000293ad      0x976 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
- .debug_info    0x0000000000029d23      0xbeb /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
- .debug_info    0x000000000002a90e     0x179f /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
- .debug_info    0x000000000002c0ad     0x20f5 /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
+ .debug_info    0x0000000000019dcd     0x1e6b /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+ .debug_info    0x000000000001bc38     0x13cd /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
+ .debug_info    0x000000000001d005     0x1709 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+ .debug_info    0x000000000001e70e      0xe50 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
+ .debug_info    0x000000000001f55e     0x1170 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
+ .debug_info    0x00000000000206ce     0x1725 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
+ .debug_info    0x0000000000021df3     0x29ed /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ .debug_info    0x00000000000247e0     0x22b5 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+ .debug_info    0x0000000000026a95     0x1258 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+ .debug_info    0x0000000000027ced     0x17b4 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+ .debug_info    0x00000000000294a1      0x976 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
+ .debug_info    0x0000000000029e17      0xbeb /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
+ .debug_info    0x000000000002aa02     0x179f /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
+ .debug_info    0x000000000002c1a1     0x20f5 /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
 
-.debug_abbrev   0x0000000000000000     0x66d9
+.debug_abbrev   0x0000000000000000     0x66df
  .debug_abbrev  0x0000000000000000       0xe8 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
  .debug_abbrev  0x00000000000000e8      0x431 /home/vagrant/RIOT/examples/Button/bin/octa/newlib_syscalls_default/syscalls.o
  .debug_abbrev  0x0000000000000519      0x322 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(sched.o)
@@ -5065,20 +5065,20 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .debug_abbrev  0x00000000000038ec      0x392 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(timer.o)
  .debug_abbrev  0x0000000000003c7e      0x1a2 /home/vagrant/RIOT/examples/Button/bin/octa/tsrb.a(tsrb.o)
  .debug_abbrev  0x0000000000003e20       0x2f /home/vagrant/RIOT/examples/Button/bin/octa/periph_common.a(init.o)
- .debug_abbrev  0x0000000000003e4f      0x3cf /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
- .debug_abbrev  0x000000000000421e      0x222 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
- .debug_abbrev  0x0000000000004440      0x256 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
- .debug_abbrev  0x0000000000004696      0x2b8 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
- .debug_abbrev  0x000000000000494e      0x2b0 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
- .debug_abbrev  0x0000000000004bfe      0x20f /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
- .debug_abbrev  0x0000000000004e0d      0x526 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- .debug_abbrev  0x0000000000005333      0x466 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
- .debug_abbrev  0x0000000000005799      0x336 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
- .debug_abbrev  0x0000000000005acf      0x25b /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
- .debug_abbrev  0x0000000000005d2a      0x19e /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
- .debug_abbrev  0x0000000000005ec8      0x206 /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
- .debug_abbrev  0x00000000000060ce      0x207 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
- .debug_abbrev  0x00000000000062d5      0x404 /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
+ .debug_abbrev  0x0000000000003e4f      0x3d5 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+ .debug_abbrev  0x0000000000004224      0x222 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
+ .debug_abbrev  0x0000000000004446      0x256 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+ .debug_abbrev  0x000000000000469c      0x2b8 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
+ .debug_abbrev  0x0000000000004954      0x2b0 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
+ .debug_abbrev  0x0000000000004c04      0x20f /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
+ .debug_abbrev  0x0000000000004e13      0x526 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ .debug_abbrev  0x0000000000005339      0x466 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+ .debug_abbrev  0x000000000000579f      0x336 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+ .debug_abbrev  0x0000000000005ad5      0x25b /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+ .debug_abbrev  0x0000000000005d30      0x19e /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
+ .debug_abbrev  0x0000000000005ece      0x206 /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
+ .debug_abbrev  0x00000000000060d4      0x207 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
+ .debug_abbrev  0x00000000000062db      0x404 /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
 
 .debug_aranges  0x0000000000000000      0xa38
  .debug_aranges
@@ -5387,7 +5387,7 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .debug_macro   0x000000000003e833      0x402 /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
  .debug_macro   0x000000000003ec35      0xa4e /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
 
-.debug_line     0x0000000000000000    0x10976
+.debug_line     0x0000000000000000    0x1097d
  .debug_line    0x0000000000000000      0x38f /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
  .debug_line    0x000000000000038f      0xaa1 /home/vagrant/RIOT/examples/Button/bin/octa/newlib_syscalls_default/syscalls.o
  .debug_line    0x0000000000000e30      0x6bc /home/vagrant/RIOT/examples/Button/bin/octa/core.a(sched.o)
@@ -5411,20 +5411,20 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .debug_line    0x0000000000009473      0x818 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(timer.o)
  .debug_line    0x0000000000009c8b      0x22a /home/vagrant/RIOT/examples/Button/bin/octa/tsrb.a(tsrb.o)
  .debug_line    0x0000000000009eb5       0xa7 /home/vagrant/RIOT/examples/Button/bin/octa/periph_common.a(init.o)
- .debug_line    0x0000000000009f5c      0x963 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
- .debug_line    0x000000000000a8bf      0x82c /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
- .debug_line    0x000000000000b0eb      0x851 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
- .debug_line    0x000000000000b93c      0x673 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
- .debug_line    0x000000000000bfaf      0x640 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
- .debug_line    0x000000000000c5ef      0x6b6 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
- .debug_line    0x000000000000cca5      0xb18 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- .debug_line    0x000000000000d7bd      0x8be /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
- .debug_line    0x000000000000e07b      0x7ae /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
- .debug_line    0x000000000000e829      0x7ad /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
- .debug_line    0x000000000000efd6      0x364 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
- .debug_line    0x000000000000f33a      0x49a /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
- .debug_line    0x000000000000f7d4      0x706 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
- .debug_line    0x000000000000feda      0xa9c /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
+ .debug_line    0x0000000000009f5c      0x96a /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+ .debug_line    0x000000000000a8c6      0x82c /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
+ .debug_line    0x000000000000b0f2      0x851 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+ .debug_line    0x000000000000b943      0x673 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
+ .debug_line    0x000000000000bfb6      0x640 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
+ .debug_line    0x000000000000c5f6      0x6b6 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
+ .debug_line    0x000000000000ccac      0xb18 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ .debug_line    0x000000000000d7c4      0x8be /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+ .debug_line    0x000000000000e082      0x7ae /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+ .debug_line    0x000000000000e830      0x7ad /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+ .debug_line    0x000000000000efdd      0x364 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
+ .debug_line    0x000000000000f341      0x49a /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
+ .debug_line    0x000000000000f7db      0x706 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
+ .debug_line    0x000000000000fee1      0xa9c /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
 
 .debug_str      0x0000000000000000    0xb2a91
  .debug_str     0x0000000000000000    0xa55ed /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
@@ -5474,7 +5474,7 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .debug_str     0x00000000000afe8e       0x7c /home/vagrant/RIOT/examples/Button/bin/octa/periph_common.a(init.o)
                                        0x316a (size before relaxing)
  .debug_str     0x00000000000aff0a      0xc66 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
-                                      0xacf1e (size before relaxing)
+                                      0xacf50 (size before relaxing)
  .debug_str     0x00000000000b0b70       0xab /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
                                       0xabed8 (size before relaxing)
  .debug_str     0x00000000000b0c1b      0x490 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
@@ -5657,7 +5657,7 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .ARM.attributes
                 0x0000000000000a89       0x2e /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-mlock.o)
 
-.debug_frame    0x0000000000000000     0x1d98
+.debug_frame    0x0000000000000000     0x1d9c
  .debug_frame   0x0000000000000000       0x20 /home/vagrant/RIOT/examples/Button/bin/octa/cpu/vectors.o
  .debug_frame   0x0000000000000020      0x178 /home/vagrant/RIOT/examples/Button/bin/octa/newlib_syscalls_default/syscalls.o
  .debug_frame   0x0000000000000198       0x78 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(sched.o)
@@ -5681,39 +5681,39 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .debug_frame   0x0000000000000ba0       0xe0 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(timer.o)
  .debug_frame   0x0000000000000c80       0xb0 /home/vagrant/RIOT/examples/Button/bin/octa/tsrb.a(tsrb.o)
  .debug_frame   0x0000000000000d30       0x20 /home/vagrant/RIOT/examples/Button/bin/octa/periph_common.a(init.o)
- .debug_frame   0x0000000000000d50       0xac /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
- .debug_frame   0x0000000000000dfc       0x2c /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
- .debug_frame   0x0000000000000e28       0x38 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
- .debug_frame   0x0000000000000e60       0x80 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
- .debug_frame   0x0000000000000ee0       0x28 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
- .debug_frame   0x0000000000000f08       0x34 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
- .debug_frame   0x0000000000000f3c      0x23c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- .debug_frame   0x0000000000001178      0x1f4 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
- .debug_frame   0x000000000000136c      0x110 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
- .debug_frame   0x000000000000147c       0x44 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
- .debug_frame   0x00000000000014c0       0x20 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
- .debug_frame   0x00000000000014e0       0x8c /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
- .debug_frame   0x000000000000156c       0x88 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
- .debug_frame   0x00000000000015f4      0x1bc /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
- .debug_frame   0x00000000000017b0       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-init.o)
- .debug_frame   0x00000000000017dc       0x28 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000001804       0x20 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memset.o)
- .debug_frame   0x0000000000001824       0x74 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-printf.o)
- .debug_frame   0x0000000000001898       0x3c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-puts.o)
- .debug_frame   0x00000000000018d4       0x40 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wbuf.o)
- .debug_frame   0x0000000000001914       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wsetup.o)
- .debug_frame   0x0000000000001940       0x68 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fflush.o)
- .debug_frame   0x00000000000019a8      0x11c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
- .debug_frame   0x0000000000001ac4       0x54 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fwalk.o)
- .debug_frame   0x0000000000001b18       0x58 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-makebuf.o)
- .debug_frame   0x0000000000001b70       0x38 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x0000000000001ba8       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000000000001bd4       0xac /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
- .debug_frame   0x0000000000001c80       0x60 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x0000000000001ce0       0x88 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
- .debug_frame   0x0000000000001d68       0x30 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000000d50       0xb0 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+ .debug_frame   0x0000000000000e00       0x2c /home/vagrant/RIOT/examples/Button/bin/octa/auto_init.a(auto_init.o)
+ .debug_frame   0x0000000000000e2c       0x38 /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+ .debug_frame   0x0000000000000e64       0x80 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
+ .debug_frame   0x0000000000000ee4       0x28 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
+ .debug_frame   0x0000000000000f0c       0x34 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
+ .debug_frame   0x0000000000000f40      0x23c /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ .debug_frame   0x000000000000117c      0x1f4 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+ .debug_frame   0x0000000000001370      0x110 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+ .debug_frame   0x0000000000001480       0x44 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+ .debug_frame   0x00000000000014c4       0x20 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
+ .debug_frame   0x00000000000014e4       0x8c /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
+ .debug_frame   0x0000000000001570       0x88 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(stmclk_common.o)
+ .debug_frame   0x00000000000015f8      0x1bc /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
+ .debug_frame   0x00000000000017b4       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000000000017e0       0x28 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000001808       0x20 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000001828       0x74 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-printf.o)
+ .debug_frame   0x000000000000189c       0x3c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-puts.o)
+ .debug_frame   0x00000000000018d8       0x40 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wbuf.o)
+ .debug_frame   0x0000000000001918       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-wsetup.o)
+ .debug_frame   0x0000000000001944       0x68 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fflush.o)
+ .debug_frame   0x00000000000019ac      0x11c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-findfp.o)
+ .debug_frame   0x0000000000001ac8       0x54 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-fwalk.o)
+ .debug_frame   0x0000000000001b1c       0x58 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-makebuf.o)
+ .debug_frame   0x0000000000001b74       0x38 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x0000000000001bac       0x2c /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000000000001bd8       0xac /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf.o)
+ .debug_frame   0x0000000000001c84       0x60 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x0000000000001ce4       0x88 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-stdio.o)
+ .debug_frame   0x0000000000001d6c       0x30 /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/libc_nano.a(lib_a-mlock.o)
 
-.debug_loc      0x0000000000000000     0x56e0
+.debug_loc      0x0000000000000000     0x56f6
  .debug_loc     0x0000000000000000      0x43e /home/vagrant/RIOT/examples/Button/bin/octa/newlib_syscalls_default/syscalls.o
  .debug_loc     0x000000000000043e      0x192 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(sched.o)
  .debug_loc     0x00000000000005d0      0x1d1 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(thread_arch.o)
@@ -5732,15 +5732,15 @@ OUTPUT(/home/vagrant/RIOT/examples/Button/bin/octa/user_button.elf elf32-littlea
  .debug_loc     0x0000000000002561      0x15f /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common.a(cpu_common.o)
  .debug_loc     0x00000000000026c0      0x368 /home/vagrant/RIOT/examples/Button/bin/octa/stm32_common_periph.a(timer.o)
  .debug_loc     0x0000000000002a28      0x2ac /home/vagrant/RIOT/examples/Button/bin/octa/tsrb.a(tsrb.o)
- .debug_loc     0x0000000000002cd4      0x1e3 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
- .debug_loc     0x0000000000002eb7       0x3f /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
- .debug_loc     0x0000000000002ef6      0x242 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
- .debug_loc     0x0000000000003138       0xa4 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
- .debug_loc     0x00000000000031dc       0x29 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
- .debug_loc     0x0000000000003205      0x91d /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
- .debug_loc     0x0000000000003b22      0xa10 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
- .debug_loc     0x0000000000004532      0x6c1 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
- .debug_loc     0x0000000000004bf3      0x180 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
- .debug_loc     0x0000000000004d73       0x21 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
- .debug_loc     0x0000000000004d94      0x20f /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
- .debug_loc     0x0000000000004fa3      0x73d /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)
+ .debug_loc     0x0000000000002cd4      0x1f9 /home/vagrant/RIOT/examples/Button/bin/octa/application_user_button.a(main.o)
+ .debug_loc     0x0000000000002ecd       0x3f /home/vagrant/RIOT/examples/Button/bin/octa/auto_init_saul.a(auto_init_gpio.o)
+ .debug_loc     0x0000000000002f0c      0x242 /home/vagrant/RIOT/examples/Button/bin/octa/core.a(mutex.o)
+ .debug_loc     0x000000000000314e       0xa4 /home/vagrant/RIOT/examples/Button/bin/octa/cortexm_common.a(cortexm_init.o)
+ .debug_loc     0x00000000000031f2       0x29 /home/vagrant/RIOT/examples/Button/bin/octa/cpu.a(stmclk.o)
+ .debug_loc     0x000000000000321b      0x91d /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(modem.o)
+ .debug_loc     0x0000000000003b38      0xa10 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(alp.o)
+ .debug_loc     0x0000000000004548      0x6c1 /home/vagrant/RIOT/examples/Button/bin/octa/oss7_modem.a(fifo.o)
+ .debug_loc     0x0000000000004c09      0x180 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(gpio_saul.o)
+ .debug_loc     0x0000000000004d89       0x21 /home/vagrant/RIOT/examples/Button/bin/octa/saul.a(saul.o)
+ .debug_loc     0x0000000000004daa      0x20f /home/vagrant/RIOT/examples/Button/bin/octa/saul_reg.a(saul_reg.o)
+ .debug_loc     0x0000000000004fb9      0x73d /home/vagrant/RIOT/examples/Button/bin/octa/xtimer.a(xtimer.o)

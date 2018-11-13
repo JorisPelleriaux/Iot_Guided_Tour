@@ -15,6 +15,9 @@
 #define TEST_FLANK      GPIO_RISING
 #ifdef BTN0_PIN /* assuming that first button is always BTN0 */
 
+//#define LED_RED            GPIO_PIN(PORT_D, 14)
+//#define LED_GREEN          GPIO_PIN(PORT_B, 0)
+
 static kernel_pid_t pid;
 static char stack[THREAD_STACKSIZE_MAIN];
 uint8_t counter = 0;
@@ -52,29 +55,39 @@ static d7ap_session_config_t d7_session_config = {
 };
 
 static void *thread_handler(void *arg)
-{
-    (void) arg;
-    counter++;
+{    
+	(void) arg;
+	counter++;
     modem_status_t status = modem_send_unsolicited_response(0x33, 0, 1, &counter, ALP_ITF_ID_D7ASP, &d7_session_config);
 
     if(status == MODEM_STATUS_COMMAND_COMPLETED_SUCCESS) {
         printf("Command completed successfully\n");
+		LED1_TOGGLE;
     } else if(status == MODEM_STATUS_COMMAND_COMPLETED_ERROR) {
         printf("Command completed with error\n");
+		counter--;
+		LED0_TOGGLE;
     } else if(status == MODEM_STATUS_COMMAND_TIMEOUT) {
         printf("Command timed out\n");
+		counter--;
+		LED0_TOGGLE;
     }
 
     return NULL;
 }
 
+//Callback of the button
 static void cb(void *arg)
 {
     uint32_t start = xtimer_now_usec();
 
     if (start-now > 500000){	//ignore bounce of push button for 500ms
-    	printf("Pressed BTN%d\n", (int)arg);
+		printf("Pressed BTN%d\n", (int)arg);
 
+		//turn leds off
+		LED0_OFF;
+	    LED1_OFF;
+		
         pid = thread_create(stack, sizeof(stack),
                             THREAD_PRIORITY_MAIN - 1,
                             0,
@@ -97,12 +110,10 @@ int main(void)
 
     uint8_t uid[D7A_FILE_UID_SIZE];
     modem_read_file(D7A_FILE_UID_FILE_ID, 0, D7A_FILE_UID_SIZE, uid);
-
-    int cnt = 0;
     
     /* init interrupt handler */
     #ifdef BTN0_PIN
-    if (gpio_init_int(BTN0_PIN, BTN0_MODE , TEST_FLANK, cb, (void *)cnt) < 0) {
+    if (gpio_init_int(BTN0_PIN, BTN0_MODE , TEST_FLANK, cb, NULL) < 0) {
         puts("[FAILED] init BTN0!");
         return 1;
     }

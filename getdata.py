@@ -15,23 +15,20 @@ from d7a.system_files.system_files import SystemFiles
 import json
 
 def write_to_jsonData(counter, deviceID, gatewayID, rx_level, x, y):
-    if db.DataSet.find({'counter': counter}).count() == 1:
-        db.DataSet.update({"counter": counter}, {"$addToSet": {'gateways': {'gatewayID': gatewayID,'rx_level': rx_level}}})
-    else:
-        jsonData = {
-            'counter': counter,
-            'deviceID': deviceID,
-            'gateways': [{
-                'gatewayID': gatewayID,
-                'rx_level': rx_level
-            }],
-            'x': x,
-            'y': y
-        }
-        # Insert data object directly into MongoDB via insert_one
-        result = db.DataSet.insert_one(jsonData)  # Collection name
-        # Print to the console the ObjectID of the new document
-        print('Done with id: {0}'.format(result.inserted_id))
+    jsonData = {
+        'counter': counter,
+        'deviceID': deviceID,
+        'gateways': [{
+            'gatewayID': gatewayID,
+            'rx_level': rx_level
+        }],
+        'x': x,
+        'y': y
+    }
+    # Insert data object directly into MongoDB via insert_one
+    result = db.DataSet.insert_one(jsonData)  # Collection name
+    # Print to the console the ObjectID of the new document
+    print('Done with id: {0}'.format(result.inserted_id))
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
@@ -67,10 +64,16 @@ def on_message(client, userdata, msg):
         print "---------------------------"
 
         if raw_input("Confirm? y/n ") == 'y':
-            location_raw = raw_input("Give x,y ")
-            location = location_raw.split(",")
-            print data[0], " ", data[1], " ", data[2], " ", location[0], " ", location[1]
-            write_to_jsonData(data[0], data[1], data[2], data[3], location[0], location[1])
+            if db.DataSet.find({'counter': data[0]}).count() == 1:
+                db.DataSet.update({"counter": data[0]},{"$addToSet": {'gateways': {'gatewayID': data[2], 'rx_level': data[3]}}})
+                print data[0], " ", data[1], " ", data[2], " ", location[0], " ", location[1]
+
+            else:
+                location_raw = raw_input("Give x,y ")
+                location = location_raw.split(",")
+                print data[0], " ", data[1], " ", data[2], " ", location[0], " ", location[1]
+                write_to_jsonData(data[0], data[1], data[2], data[3], location[0], location[1])
+
             data.clear()
 
 client = mqtt.Client()
