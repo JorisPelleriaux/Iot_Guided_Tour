@@ -23,12 +23,13 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 * CMWX1ZZABZ (LPWAN wireless module)
 
 ## TODO
-- [ ] Fingerprinting (Joris & Axel)
+- [ ] Fingerprinting (Joris)
 - [ ] GPS uitlezen (Arne)
 - [ ] Custom kaart in Thingsboard
-- [ ] Low Power emission in D7 en LoRa
-- [ ] Accelerometer
-- [x] Kaart fingerprinting maken (Axel)
+- [ ] Low Power emission in D7 en LoRa (Axel)
 - [ ] RFID onderzoek
-- [x] database maken (MongoDB)
+- [ ] README.md voor gebruik programma en projectstructuur
+- [x] database maken (MongoDB) (Joris)
 - [x] D7 berichten met pushbutton (Joris)
+- [x] Accelerometer (Axel)
+- [x] Kaart fingerprinting maken (Axel)
