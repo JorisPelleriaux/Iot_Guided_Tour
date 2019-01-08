@@ -29,6 +29,7 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 - [ ] Low Power emission in D7 en LoRa (Axel)
 - [ ] RFID onderzoek
 - [ ] README.md voor gebruik programma en projectstructuur
+- [ ] Power measurements (Axel)
 - [x] database maken (MongoDB) (Joris)
 - [x] D7 berichten met pushbutton (Joris)
 - [x] Accelerometer (Axel)
