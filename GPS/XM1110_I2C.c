@@ -6,7 +6,6 @@
 #include <string.h>
 
 #include "board.h"
-#include "minmea.h"
 
 const uint16_t DEVICE_ADDR = 0x10;
 const uint16_t FLAGS = 0;
@@ -36,8 +35,13 @@ void printFailMsg(int failMsg) {
     }
 }
 
-void read_sensor(i2c_t DEV) {
-    // Read the GPS module
+/**
+ * Read the sensor buffer and return the RMC data if found
+ *
+ * @param DEV i2c handle
+ * @param *outputBuffer pointer to the output buffer
+ */
+void read_sensor(i2c_t DEV, struct XM1110_output_buffer *outputBuffer) {
     i2c_acquire(DEV);
 
     char i2cBuffer[255];
@@ -49,14 +53,22 @@ void read_sensor(i2c_t DEV) {
     }
     i2c_release(DEV);
 
-    // Parse the received message
-    parseQueue(i2cBuffer);
+    char *sentence = searchNMEAType(i2cBuffer, MINMEA_SENTENCE_RMC);
+    printf("[GPS] - Sentence=%s\n", sentence);
+    struct minmea_sentence_rmc frame;
+    minmea_parse_rmc(&frame, sentence);
+    outputBuffer->latitude = minmea_tocoord(&frame.latitude);
+    outputBuffer->longitude = minmea_tocoord(&frame.longitude);
+//    printf("$RMC floating point degree coordinates and speed: (%f N, %f E) %f\n",
+//           minmea_tocoord(&frame.latitude),
+//           minmea_tocoord(&frame.longitude),
+//           minmea_tofloat(&frame.speed));
 }
 
-/*
+/**
  * Decodes a single NMEA sentence and prints it to terminal
  */
-void decodeNMEA(char* sentence){
+void decodeNMEA(char *sentence) {
     // Decode single NMEA senteces
     switch (minmea_sentence_id(sentence, false)) {
         case MINMEA_SENTENCE_RMC: {
@@ -67,14 +79,16 @@ void decodeNMEA(char* sentence){
                        minmea_tocoord(&frame.longitude),
                        minmea_tofloat(&frame.speed));
             }
-        } break;
+        }
+            break;
 
         case MINMEA_SENTENCE_GGA: {
             struct minmea_sentence_gga frame;
             if (minmea_parse_gga(&frame, sentence)) {
                 printf("$GGA: fix quality: %d\n", frame.fix_quality);
             }
-        } break;
+        }
+            break;
 
         case MINMEA_SENTENCE_GSV: {
             struct minmea_sentence_gsv frame;
@@ -88,15 +102,17 @@ void decodeNMEA(char* sentence){
                            frame.sats[i].azimuth,
                            frame.sats[i].snr);
             }
-        } break;
+        }
+            break;
 
         case MINMEA_SENTENCE_GSA:
         case MINMEA_SENTENCE_GLL:
         case MINMEA_SENTENCE_GST:
         case MINMEA_SENTENCE_VTG:
-        case MINMEA_SENTENCE_ZDA:{
+        case MINMEA_SENTENCE_ZDA: {
 //            printf("Sentence not implemented\n");
-        } break;
+        }
+            break;
 
         default: {
 //            printf("/[][][][][][][][][][][]\n");
@@ -108,17 +124,24 @@ void decodeNMEA(char* sentence){
     }
 }
 
-/*
- * Takes the full i2c buffer as an input in splits it in individual sentences
+/**
+ * Takes the i2c buffer as an input and returns the first valid NMEA sentence that fits the type specified
+ *
+ * @param bufferInput
+ * @param minmea_sentence_id
+ * @return the sentence, -1 if no valid sentence is found
  */
-void parseQueue(char *bufferInput){
+char *searchNMEAType(char *bufferInput, enum minmea_sentence_id sentence_id) {
 //    printf("Started queue parser\n");
-
     const char DELIM[2] = "\n";                         // The string to split each sentence on
     char *sentence;
     sentence = strtok(bufferInput, DELIM);              // Split the message up in sentences (tokens)
-    while(sentence != NULL){                            // Keep processing as long as there are tokens left
-        decodeNMEA(sentence);
-        sentence = strtok(NULL, DELIM);
+    while (sentence != NULL) {                          // Keep processing as long as there are tokens left
+        if (minmea_sentence_id(sentence, false) == sentence_id) {
+            return sentence;                            // Return the valid sentence
+        } else {
+            sentence = strtok(NULL, DELIM);             // Continue processing
+        }
     }
+    return "-1";                                        // Return -1 if nothing found
 }

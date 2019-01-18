@@ -25,7 +25,7 @@
     <session id="1868468684">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -51,7 +51,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Makefile" value="187" />
+          <entry key="Makefile" value="190" />
           <entry key="c" value="3425" />
           <entry key="h" value="487" />
         </counts>
@@ -60,7 +60,7 @@
         <counts>
           <entry key="Doxygen file" value="6" />
           <entry key="ObjectiveC" value="3906" />
-          <entry key="PLAIN_TEXT" value="187" />
+          <entry key="PLAIN_TEXT" value="190" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -69,7 +69,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state relative-caret-position="323">
+              <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -95,22 +95,6 @@
               <folding>
                 <element signature="e#270#1026#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../riot-oss7-modem/apps/sensor_push/main.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1173" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../riot-oss7-modem/apps/sensor_push/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -138,12 +122,12 @@
         <option value="$PROJECT_DIR$/libnmea/target/include/nmea/gpgll.h" />
         <option value="$PROJECT_DIR$/libnmea/target/include/nmea/gpgsv.h" />
         <option value="$PROJECT_DIR$/libnmea/target/include/nmea/gprmc.h" />
-        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/bin/pkg/octa/minmea/minmea.h" />
         <option value="$PROJECT_DIR$/XM1110_I2C.h" />
         <option value="$PROJECT_DIR$/bin/pkg/octa/minmea/minmea.c" />
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/XM1110_I2C.c" />
+        <option value="$PROJECT_DIR$/Makefile" />
       </list>
     </option>
   </component>
@@ -191,7 +175,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/pkg/octa/minmea" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
@@ -234,16 +218,15 @@
       <workItem from="1543334303221" duration="2931000" />
       <workItem from="1543927976700" duration="7238000" />
       <workItem from="1544532639056" duration="12900000" />
-      <workItem from="1545397413780" duration="2027000" />
+      <workItem from="1545397413780" duration="3003000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59458000" />
+    <option name="totallyTimeSpent" value="60434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -310,6 +293,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../riot-oss7-modem/apps/sensor_push/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../riot-oss7-modem/apps/sensor_push/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1173" />
@@ -325,10 +315,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../riot-oss7-modem/apps/sensor_push/Makefile">
+    <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="323">
+          <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -336,13 +326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
         </state>
       </provider>
     </entry>
