@@ -23,7 +23,9 @@ broker_address = "eu.thethings.network"
 tbBroker = "thingsboard.idlab.uantwerpen.be"
 tbPort = 1883
 tbAccessToken = "BSUetfyzscwX4L41ENOP"
-# tbDeviceID = "8e46dd30-1806-11e9-85af-89570d31e3bf"
+
+
+tbDeviceID = "8e46dd30-1806-11e9-85af-89570d31e3bf"
 
 
 def on_message(client, userdata, message):
@@ -36,7 +38,7 @@ def on_message(client, userdata, message):
                     "gps_longitude": float(payloadFields["gps_longitude"])}
     print("Telemetry: ", tb_telemetry)
     current_ts_ms = int(round(time.time() * 1000))  # current timestamp in milliseconds, needed for Thingsboard
-    tbDeviceID = msgDec["dev_id"]
+    # tbDeviceID = msgDec["dev_id"]
 
     tb.sendDeviceTelemetry(tbDeviceID, current_ts_ms, tb_telemetry)
 
