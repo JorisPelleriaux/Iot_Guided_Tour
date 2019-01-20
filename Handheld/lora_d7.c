@@ -1,5 +1,5 @@
 #include "modem.h"
-#include "communication/lora_d7.h"
+#include "lora_d7.h"
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------
  * Defines
@@ -33,7 +33,7 @@ void on_modem_write_file_data_callback(uint8_t file_id, uint32_t offset, uint32_
 
 static d7ap_session_config_t d7_session_config = {
     .qos = {
-        .qos_resp_mode = SESSION_RESP_MODE_PREFERRED,
+        .qos_resp_mode = SESSION_RESP_MODE_NO,
         .qos_retry_mode = SESSION_RETRY_MODE_NO
     },
     .dormant_timeout = 0,

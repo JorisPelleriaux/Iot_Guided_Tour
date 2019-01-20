@@ -1,11 +1,20 @@
 APPLICATION=shell
 
-BOARD ?= octa
+BOARD ?= native
 
 RIOTBASE ?= $(CURDIR)/../../../RIOT
 
+# Comment this out to disable code in RIOT that does safety checking
+# which is not needed in a production environment but helps in the
+# development process:
+DEVELHELP ?= 1
+
+# Change this to 0 show compiler invocation lines by default:
+QUIET ?= 1
+
 # Add required modules here
 USEMODULE += ps
+USEMODULE += periph_gpio
 USEMODULE += periph_gpio_irq
 USEMODULE += lsm303agr
 USEMODULE += xtimer
@@ -16,8 +25,6 @@ USEMODULE += oss7_modem
 
 INCLUDES += -I$(RIOTPROJECT)/../../../riot-oss7-modem/drivers/oss7_modem/include
 
-USEMODULE += communication
-INCLUDES += -I$(CURDIR)/communication
-DIRS =+ $(CURDIR)/communication
-
 include $(RIOTBASE)/Makefile.include
+
+CFLAGS += -DDEBUG_ASSERT_VERBOSE
