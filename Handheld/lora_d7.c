@@ -94,7 +94,8 @@ int D7_send(uint8_t* payload)
     current_interface_id = ALP_ITF_ID_D7ASP;
     current_interface_config = &d7_session_config;
 
-    modem_status_t status = modem_send_unsolicited_response(FILE_ID, 0, 2, payload, current_interface_id, current_interface_config);
+    uint32_t payloadLength = sizeof(payload) / sizeof(payload[0]);
+    modem_status_t status = modem_send_unsolicited_response(FILE_ID, 0, payloadLength, payload, current_interface_id, current_interface_config);
 
     if(status == MODEM_STATUS_COMMAND_COMPLETED_SUCCESS) {
         printf("Command completed successfully\n");
@@ -118,6 +119,7 @@ int LoRa_send(uint8_t* payload)
     current_interface_config = &lorawan_session_config;
     
     // modem_status_t modem_send_unsolicited_response(uint8_t file_id, uint32_t offset, uint32_t length, uint8_t* data, alp_itf_id_t itf, void* interface_config);
+    uint32_t payloadLength = sizeof(payload) / sizeof(payload[0]);
     modem_status_t status = modem_send_unsolicited_response(FILE_ID, 0, 2, payload, current_interface_id, current_interface_config);
 
     if(status == MODEM_STATUS_COMMAND_COMPLETED_SUCCESS) {
