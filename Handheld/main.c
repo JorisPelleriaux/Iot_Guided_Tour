@@ -157,8 +157,8 @@ int configuration_button_interrupt(void)
 void configuration_lsm303agr_interrupt(void)
 {
     // GPIO_IN: input, no pull
-    gpio_init_int(INT_1, GPIO_IN , GPIO_RISING, acc_callback, (void*) 0);
-    gpio_irq_enable(INT_1);
+    gpio_init_int(GPIO_PIN(PORT_B, 13), GPIO_IN , GPIO_RISING, acc_callback, (void*) 0);
+    gpio_irq_enable(GPIO_PIN(PORT_B, 13));
 
 }
 
