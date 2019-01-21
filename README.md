@@ -27,9 +27,9 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 - [ ] GPS uitlezen (Arne)
 - [ ] Custom kaart in Thingsboard
 - [ ] Low Power emission in D7 en LoRa (Axel)
-- [ ] RFID onderzoek
+- [x] RFID onderzoek -> vervangen door button
 - [ ] README.md voor gebruik programma en projectstructuur
-- [ ] Power measurements (Axel)
+- [x] Power measurements (Axel)
 - [x] database maken (MongoDB) (Joris)
 - [x] D7 berichten met pushbutton (Joris)
 - [x] Accelerometer (Axel)
