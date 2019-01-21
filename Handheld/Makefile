@@ -1,8 +1,10 @@
 APPLICATION=shell
 
-BOARD ?= native
+BOARD ?= octa
 
 RIOTBASE ?= $(CURDIR)/../..
+
+FEATURES_REQUIRED = periph_i2c
 
 # Comment this out to disable code in RIOT that does safety checking
 # which is not needed in a production environment but helps in the
@@ -24,6 +26,8 @@ EXTERNAL_MODULE_DIRS += $(RIOTPROJECT)/../../riot-oss7-modem/drivers/oss7_modem
 USEMODULE += oss7_modem
 
 INCLUDES += -I$(RIOTPROJECT)/../../riot-oss7-modem/drivers/oss7_modem/include
+
+USEPKG += minmea
 
 include $(RIOTBASE)/Makefile.include
 

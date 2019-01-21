@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/GPS/bin/pkg/octa/minmea" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Handheld/bin/pkg/octa/minmea" vcs="Git" />
   </component>
 </project>
