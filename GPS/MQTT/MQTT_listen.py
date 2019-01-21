@@ -1,8 +1,8 @@
 import sys
+import os
 
-# sys.path.append("/home/vagrant/RIOT/Iot_Guided_Tour/Thingsboard")
-sys.path.append("D:\Dropbox\Documents\UA\I-IoT\RIOT-students\Iot_Guided_Tour\Thingsboard")
-sys.path.append("C:\Users\Arne\AppData\Local\Programs\Python\Python37\Lib\site-packages")
+# Import the Thingsboard files with relative path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..\Thingsboard')))
 
 import paho.mqtt.client as mqtt
 
@@ -22,10 +22,10 @@ access_key = "ttn-account-v2.ODS_7P5rFOgY5X9qMrkBj0ftUhvbYCyTyks56syDHc4"
 broker_address = "eu.thethings.network"
 tbBroker = "thingsboard.idlab.uantwerpen.be"
 tbPort = 1883
-tbAccessToken = "BSUetfyzscwX4L41ENOP"
+tbAccessToken = "ODvYloOuCa514CgP2ZaZ"
 
 
-tbDeviceID = "8e46dd30-1806-11e9-85af-89570d31e3bf"
+tbDeviceID = "GPS_test"
 
 
 def on_message(client, userdata, message):

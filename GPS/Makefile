@@ -2,7 +2,7 @@ APPLICATION=shell
 
 BOARD ?= octa
 
-RIOTBASE ?= $(CURDIR)/..
+RIOTBASE ?= $(CURDIR)/../..
 
 FEATURES_REQUIRED = periph_i2c
 
