@@ -56,8 +56,7 @@
  /home/vagrant/RIOT/drivers/include/periph/pm.h \
  /home/vagrant/RIOT/core/include/assert.h \
  /home/vagrant/RIOT/cpu/stm32l4/include/periph_cpu.h \
- /home/vagrant/RIOT/cpu/stm32_common/include/periph_cpu_common.h \
- /home/vagrant/RIOT/sys/include/pm_layered.h
+ /home/vagrant/RIOT/cpu/stm32_common/include/periph_cpu_common.h
 
 /home/vagrant/RIOT/Iot_Guided_Tour/Handheld/bin/octa/riotbuild/riotbuild.h:
 
@@ -172,5 +171,3 @@
 /home/vagrant/RIOT/cpu/stm32l4/include/periph_cpu.h:
 
 /home/vagrant/RIOT/cpu/stm32_common/include/periph_cpu_common.h:
-
-/home/vagrant/RIOT/sys/include/pm_layered.h:

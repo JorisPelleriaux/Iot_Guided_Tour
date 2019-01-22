@@ -78,7 +78,6 @@
  /home/vagrant/RIOT/core/include/log.h \
  /home/vagrant/RIOT/drivers/include/periph/pm.h \
  /home/vagrant/RIOT/core/include/assert.h \
- /home/vagrant/RIOT/sys/include/pm_layered.h \
  /home/vagrant/RIOT/sys/include/stdio_base.h \
  /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/times.h \
  /home/vagrant/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/time.h \
@@ -249,8 +248,6 @@
 /home/vagrant/RIOT/drivers/include/periph/pm.h:
 
 /home/vagrant/RIOT/core/include/assert.h:
-
-/home/vagrant/RIOT/sys/include/pm_layered.h:
 
 /home/vagrant/RIOT/sys/include/stdio_base.h:
 

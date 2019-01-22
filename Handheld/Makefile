@@ -21,7 +21,7 @@ USEMODULE += periph_gpio_irq
 USEMODULE += lsm303agr
 USEMODULE += xtimer
 USEMODULE += saul_default
-USEMODULE += pm_layered 
+#USEMODULE += pm_layered 
 
 EXTERNAL_MODULE_DIRS += $(RIOTPROJECT)/../../riot-oss7-modem/drivers/oss7_modem
 USEMODULE += oss7_modem

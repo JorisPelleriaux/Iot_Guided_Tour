@@ -57,7 +57,6 @@
  /home/vagrant/RIOT/core/include/assert.h \
  /home/vagrant/RIOT/core/include/msg.h \
  /home/vagrant/RIOT/core/include/sched.h \
- /home/vagrant/RIOT/sys/include/pm_layered.h \
  /home/vagrant/RIOT/core/include/debug.h \
  /home/vagrant/RIOT/core/include/thread.h
 
@@ -174,8 +173,6 @@
 /home/vagrant/RIOT/core/include/msg.h:
 
 /home/vagrant/RIOT/core/include/sched.h:
-
-/home/vagrant/RIOT/sys/include/pm_layered.h:
 
 /home/vagrant/RIOT/core/include/debug.h:
 

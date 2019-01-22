@@ -77,7 +77,6 @@
  /home/vagrant/RIOT/drivers/include/periph/dev_enums.h \
  /home/vagrant/RIOT/sys/include/timex.h \
  /home/vagrant/RIOT/drivers/include/periph/pm.h \
- /home/vagrant/RIOT/sys/include/pm_layered.h \
  /home/vagrant/RIOT/Iot_Guided_Tour/Handheld/lora_d7.h \
  /home/vagrant/RIOT/Iot_Guided_Tour/Handheld/XM1110_I2C.h \
  /home/vagrant/RIOT/drivers/include/periph/i2c.h \
@@ -251,8 +250,6 @@
 /home/vagrant/RIOT/sys/include/timex.h:
 
 /home/vagrant/RIOT/drivers/include/periph/pm.h:
-
-/home/vagrant/RIOT/sys/include/pm_layered.h:
 
 /home/vagrant/RIOT/Iot_Guided_Tour/Handheld/lora_d7.h:
 

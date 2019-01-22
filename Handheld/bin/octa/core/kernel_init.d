@@ -61,7 +61,6 @@
  /home/vagrant/RIOT/cpu/stm32_common/include/periph_cpu_common.h \
  /home/vagrant/RIOT/cpu/cortexm_common/include/cpu.h \
  /home/vagrant/RIOT/core/include/sched.h \
- /home/vagrant/RIOT/sys/include/pm_layered.h \
  /home/vagrant/RIOT/core/include/debug.h \
  /home/vagrant/RIOT/core/include/thread.h \
  /home/vagrant/RIOT/sys/include/auto_init.h
@@ -187,8 +186,6 @@
 /home/vagrant/RIOT/cpu/cortexm_common/include/cpu.h:
 
 /home/vagrant/RIOT/core/include/sched.h:
-
-/home/vagrant/RIOT/sys/include/pm_layered.h:
 
 /home/vagrant/RIOT/core/include/debug.h:
 
