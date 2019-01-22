@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #include "board.h"
 #include "xtimer.h"
@@ -278,17 +279,20 @@ int main(void)
                 if (send_mode == SEND_LORA)
                 {
                  read_sensor(DEV, &gpsOutputBuffer);
-                 if (!gpsOutputBuffer.latitude && !gpsOutputBuffer.longitude)
+                 if (isnan(gpsOutputBuffer.latitude) && isnan(gpsOutputBuffer.longitude))
                  {
-                     printf("[GPS] - Coords %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
-                     gps_latitude = gpsOutputBuffer.latitude;
-                     gps_longitude = gpsOutputBuffer.longitude;
+                    // No fix from the GPS module => send dummy data
+//                    printf("[GPS] - No fix - no coord print --- %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
+//                    printf("[GPS] - No fix - no coord check --- %d , %d \n", isnan(gpsOutputBuffer.latitude), isnan(gpsOutputBuffer.longitude));
+                    gps_latitude = 51.177327;
+                    gps_longitude = 4.416928;
                  }
                  else
                  {
-                     printf("[GPS] - No fix - no coord --- %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
-                     gps_latitude = 51.177327;
-                     gps_longitude = -4.416928;
+                    // Fix from GPS module => send actual data
+//                    printf("[GPS] - Coords %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
+                    gps_latitude = gpsOutputBuffer.latitude;
+                    gps_longitude = gpsOutputBuffer.longitude;
                  }
 
                  // Payload formation
