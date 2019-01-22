@@ -20,7 +20,7 @@ int LoRa_D7_init(void);
  * @return                  0 on success
  * @return                  -1 on error
  */
-int D7_send(uint8_t* payload);
+int D7_send(uint8_t* payload, uint32_t payloadLength);
 
 /**
  * @brief   Send LoRa message
@@ -31,4 +31,4 @@ int D7_send(uint8_t* payload);
  * @return                  0 on success
  * @return                  -1 on error
  */
-int LoRa_send(uint8_t* payload);
+int LoRa_send(uint8_t* payload, uint32_t payloadLength);

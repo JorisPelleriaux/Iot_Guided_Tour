@@ -5,9 +5,9 @@
  * Defines
  * -------------------------------------------------------------------------------------------------------------------------------------------
  */
-#define LORAWAN_NETW_SESSION_KEY  { 0xAB, 0x68, 0xEE, 0xA3, 0x9A, 0x24, 0x7F, 0x5D, 0xCC, 0xB3, 0xD1, 0xEC, 0x3F, 0xC9, 0x66, 0x88 }
-#define LORAWAN_APP_SESSION_KEY  { 0x27, 0x8C, 0x21, 0x7E, 0x53, 0x1F, 0x37, 0xAA, 0x27, 0x5C, 0xCA, 0x9E, 0xE0, 0x4C, 0x3E, 0x47 }
-#define LORAWAN_DEV_ADDR 0x26011170
+#define LORAWAN_NETW_SESSION_KEY  { 0xF3, 0x16, 0xF6, 0xC0, 0xEE, 0xA3, 0xA2, 0xC5, 0x76, 0x0B, 0x2D, 0x40, 0xEB, 0x4E, 0x3E, 0x8B }
+#define LORAWAN_APP_SESSION_KEY  { 0xEB, 0xFD, 0x83, 0x12, 0x1F, 0x62, 0x09, 0x95, 0x0C, 0x2D, 0x2F, 0xD3, 0xD9, 0x92, 0x8D, 0xF0 }
+#define LORAWAN_DEV_ADDR 0x2601192D
 #define LORAWAN_NETW_ID 0x000000
 
 #define FILE_ID 0x40
@@ -89,12 +89,11 @@ int LoRa_D7_init(void)
  * -------------------------------------------------------------------------------------------------------------------------------------------
  */
 
-int D7_send(uint8_t* payload)
+int D7_send(uint8_t* payload, uint32_t payloadLength)
 {
     current_interface_id = ALP_ITF_ID_D7ASP;
     current_interface_config = &d7_session_config;
 
-    uint32_t payloadLength = sizeof(payload) / sizeof(payload[0]);
     modem_status_t status = modem_send_unsolicited_response(FILE_ID, 0, payloadLength, payload, current_interface_id, current_interface_config);
 
     if(status == MODEM_STATUS_COMMAND_COMPLETED_SUCCESS) {
@@ -113,13 +112,12 @@ int D7_send(uint8_t* payload)
  * -------------------------------------------------------------------------------------------------------------------------------------------
  */
 
-int LoRa_send(uint8_t* payload)
+int LoRa_send(uint8_t* payload, uint32_t payloadLength)
 {
     current_interface_id = ALP_ITF_ID_LORAWAN_ABP;
     current_interface_config = &lorawan_session_config;
     
     // modem_status_t modem_send_unsolicited_response(uint8_t file_id, uint32_t offset, uint32_t length, uint8_t* data, alp_itf_id_t itf, void* interface_config);
-    uint32_t payloadLength = sizeof(payload) / sizeof(payload[0]);
     modem_status_t status = modem_send_unsolicited_response(FILE_ID, 0, payloadLength, payload, current_interface_id, current_interface_config);
 
     if(status == MODEM_STATUS_COMMAND_COMPLETED_SUCCESS) {

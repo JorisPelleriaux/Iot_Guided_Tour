@@ -10,7 +10,7 @@
 #include "shell_commands.h"
 #include "errors.h"
 
-i2c_t DEV = I2C_DEV(0);
+i2c_t DEV = I2C_DEV(1);
 
 #define INTERVAL (20U * US_PER_SEC)
 
@@ -63,13 +63,13 @@ int main(void)
     alp_itf_id_t current_interface_id = ALP_ITF_ID_LORAWAN_ABP;
     void* current_interface_config = (void*)&lorawan_session_config;
 
-    struct XM1110_output_buffer outputBuffer;
+    struct XM1110_output_buffer gpsOutputBuffer;
     uint8_t counter = 0;
 
     uint8_t payload_length = 8;
     uint8_t payload[payload_length];
-    float gps_latitude = 51.177327;
-    float gps_longitude = 4.416928;
+    float gps_latitude;
+    float gps_longitude;
 
 
     while(1) {
@@ -79,15 +79,15 @@ int main(void)
         /////////////////////
         // Read the GPS sensor
         /////////////////////
-        read_sensor(DEV, &outputBuffer);
-        if (!outputBuffer.latitude && !outputBuffer.longitude) {
-            printf("[GPS] - Coords %f N, %f E\n", outputBuffer.latitude, outputBuffer.longitude);
-            gps_latitude = outputBuffer.latitude;
-            gps_longitude = outputBuffer.longitude;
+        read_sensor(DEV, &gpsOutputBuffer);
+        if (!gpsOutputBuffer.latitude && !gpsOutputBuffer.longitude) {
+            printf("[GPS] - Coords %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
+            gps_latitude = gpsOutputBuffer.latitude;
+            gps_longitude = gpsOutputBuffer.longitude;
         } else {
-            printf("[GPS] - No fix - no coord\n");
+            printf("[GPS] - No fix - no coord --- %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
             gps_latitude = 51.177327;
-            gps_longitude = 4.416928;
+            gps_longitude = -4.416928;
         }
 
         /////////////////////

@@ -39,6 +39,10 @@
 #define ACTIVE              1
 #define SEND_LORA           1
 #define SEND_D7             0
+struct PayloadPackage{
+    uint32_t length;
+    uint8_t data[];
+};
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------
  * Global variables
@@ -55,7 +59,7 @@ static int send_mode;
 static uint32_t time_now;
 static kernel_pid_t pid;
 static char thread_stack[THREAD_STACKSIZE_MAIN];
-i2c_t DEV = I2C_DEV(0);
+i2c_t DEV = I2C_DEV(1);
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------
  * Callbacks
@@ -121,15 +125,14 @@ static void BTN_callback(void *arg)
 static void *thread_handler(void *arg)
 {
     (void) arg;
-
-    puts(arg);
+    struct PayloadPackage *payloadPackage = arg;
     
     // Send via LoRa
     if(send_mode == SEND_LORA)
     {
         // ---------------------
         puts("LoRa msg");
-        LoRa_send(arg);
+        LoRa_send(payloadPackage->data, payloadPackage->length);
         // ---------------------
     }
     // Send via D7
@@ -137,7 +140,7 @@ static void *thread_handler(void *arg)
     {
         // ---------------------
         puts("D7 msg");
-        D7_send(arg);
+        D7_send(payloadPackage->data, payloadPackage->length);
         // ---------------------
     }
 
@@ -238,7 +241,7 @@ int main(void)
 
     // Modules initializations
     LoRa_D7_init();
-    // i2c_init(DEV);
+    i2c_init(DEV);
 
     // Timers
     last_measured_sleep_time = xtimer_now();
@@ -246,17 +249,17 @@ int main(void)
     last_measured_interrupt_time = xtimer_now();
 
     // GPS vars
-    // struct XM1110_output_buffer gpsOutputBuffer;
-    // float gps_latitude = 51.177327;
-    // float gps_longitude = 4.416928;
+    struct XM1110_output_buffer gpsOutputBuffer;
+    float gps_latitude;
+    float gps_longitude;
 
     // LoRa vars
-    // uint8_t lora_payload_length = 8;
-    // uint8_t lora_payload[lora_payload_length];
+    struct PayloadPackage *lora_pkg = malloc(sizeof *lora_pkg);
+    lora_pkg->length = 8;
 
-    //D7 vars
-    // uint8_t d7_payload_length = 8;
-    // uint8_t d7_payload[d7_payload_length];
+    // D7 vars
+    struct PayloadPackage *d7_pkg = malloc(sizeof *d7_pkg);
+    d7_pkg->length = 8;
     
     //---------------Program loop---------------//
     while(1) 
@@ -274,39 +277,39 @@ int main(void)
 
                 if (send_mode == SEND_LORA)
                 {
-            //     read_sensor(DEV, &gpsOutputBuffer);
-            //     if (!gpsOutputBuffer.latitude && !gpsOutputBuffer.longitude) 
-            //     {
-            //         printf("[GPS] - Coords %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
-            //         gps_latitude = gpsOutputBuffer.latitude;
-            //         gps_longitude = gpsOutputBuffer.longitude;
-            //     } 
-            //     else
-            //     {
-            //         printf("[GPS] - No fix - no coord\n");
-            //         gps_latitude = 51.177327;
-            //         gps_longitude = 4.416928;
-            //     }
+                 read_sensor(DEV, &gpsOutputBuffer);
+                 if (!gpsOutputBuffer.latitude && !gpsOutputBuffer.longitude)
+                 {
+                     printf("[GPS] - Coords %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
+                     gps_latitude = gpsOutputBuffer.latitude;
+                     gps_longitude = gpsOutputBuffer.longitude;
+                 }
+                 else
+                 {
+                     printf("[GPS] - No fix - no coord --- %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
+                     gps_latitude = 51.177327;
+                     gps_longitude = -4.416928;
+                 }
 
-            //     // Payload formation
-            //     int32_t gps_latitude_payload = round(gps_latitude * 1000000);
-            //     lora_payload[0] = (gps_latitude_payload & 0xFF000000) >> 24;
-            //     lora_payload[1] = (gps_latitude_payload & 0x00FF0000) >> 16;
-            //     lora_payload[2] = (gps_latitude_payload & 0x0000FF00) >> 8;
-            //     lora_payload[3] = (gps_latitude_payload & 0X000000FF);
+                 // Payload formation
+                 int32_t gps_latitude_payload = round(gps_latitude * 1000000);
+                 lora_pkg->data[0] = (gps_latitude_payload & 0xFF000000) >> 24;
+                 lora_pkg->data[1] = (gps_latitude_payload & 0x00FF0000) >> 16;
+                 lora_pkg->data[2] = (gps_latitude_payload & 0x0000FF00) >> 8;
+                 lora_pkg->data[3] = (gps_latitude_payload & 0X000000FF);
 
-            //     int32_t gps_longitude_payload = round(gps_longitude * 1000000);
-            //     lora_payload[4] = (gps_longitude_payload & 0xFF000000) >> 24;
-            //     lora_payload[5] = (gps_longitude_payload & 0x00FF0000) >> 16;
-            //     lora_payload[6] = (gps_longitude_payload & 0x0000FF00) >> 8;
-            //     lora_payload[7] = (gps_longitude_payload & 0X000000FF);
+                 int32_t gps_longitude_payload = round(gps_longitude * 1000000);
+                 lora_pkg->data[4] = (gps_longitude_payload & 0xFF000000) >> 24;
+                 lora_pkg->data[5] = (gps_longitude_payload & 0x00FF0000) >> 16;
+                 lora_pkg->data[6] = (gps_longitude_payload & 0x0000FF00) >> 8;
+                 lora_pkg->data[7] = (gps_longitude_payload & 0X000000FF);
 
                     // thread_create (char *stack, int stacksize, char priority, int flags, thread_task_func_t task_func, void *arg, const char *name)
                     pid = thread_create(thread_stack, sizeof(thread_stack),
                                         THREAD_PRIORITY_MAIN - 1,
                                         0,
                                         thread_handler,
-                                        0x00, "send thread");
+                                        lora_pkg, "send thread");
                 }
                 else
                 {
@@ -314,7 +317,7 @@ int main(void)
                                         THREAD_PRIORITY_MAIN - 1,
                                         0,
                                         thread_handler,
-                                        NULL, "send thread");
+                                        d7_pkg, "send thread");
                 }
             }
 
