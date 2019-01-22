@@ -156,7 +156,7 @@ char *searchNMEAType(char *bufferInput, enum minmea_sentence_id sentence_id) {
 //        printf("[GPS] token lengths %d vs %d\n", strlen(token), strlen(sentence));
 //        printf("[GPS] sentence %s\n", sentence);
 //        printf("[GPS] sentence check %d\n", minmea_sentence_id(sentence, false));
-        if (minmea_sentence_id(sentence, false) == sentence_id) {
+        if (minmea_sentence_id(sentence, true) == sentence_id) {
             return sentence;                                        // Return the valid sentence
         } else {
             token = strtok(NULL, DELIM);                            // Continue processing

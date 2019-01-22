@@ -23,9 +23,7 @@ broker_address = "eu.thethings.network"
 tbBroker = "thingsboard.idlab.uantwerpen.be"
 tbPort = 1883
 tbAccessToken = "ODvYloOuCa514CgP2ZaZ"
-
-
-tbDeviceID = "GPS_test"
+tbDeviceID = "IoT_Tour_Arne"
 
 
 def on_message(client, userdata, message):
