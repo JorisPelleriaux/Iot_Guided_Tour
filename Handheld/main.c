@@ -289,13 +289,13 @@ int main(void)
             //     }
 
             //     // Payload formation
-            //     uint32_t gps_latitude_payload = round(gps_latitude * 1000000);
+            //     int32_t gps_latitude_payload = round(gps_latitude * 1000000);
             //     lora_payload[0] = (gps_latitude_payload & 0xFF000000) >> 24;
             //     lora_payload[1] = (gps_latitude_payload & 0x00FF0000) >> 16;
             //     lora_payload[2] = (gps_latitude_payload & 0x0000FF00) >> 8;
             //     lora_payload[3] = (gps_latitude_payload & 0X000000FF);
 
-            //     uint32_t gps_longitude_payload = round(gps_longitude * 1000000);
+            //     int32_t gps_longitude_payload = round(gps_longitude * 1000000);
             //     lora_payload[4] = (gps_longitude_payload & 0xFF000000) >> 24;
             //     lora_payload[5] = (gps_longitude_payload & 0x00FF0000) >> 16;
             //     lora_payload[6] = (gps_longitude_payload & 0x0000FF00) >> 8;
