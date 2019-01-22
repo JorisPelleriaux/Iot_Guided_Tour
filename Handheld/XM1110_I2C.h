@@ -4,9 +4,13 @@
 #ifndef IOT_GUIDED_TOUR_XM1110_I2C_H
 #define IOT_GUIDED_TOUR_XM1110_I2C_H
 
-struct XM1110_output_buffer{
+#define NO_FIX_LAT 51.177327;
+#define NO_FIX_LONG 4.416928;
+
+struct XM1110_output_buffer {
     float latitude;
     float longitude;
+    bool isValid;
 };
 
 void printFailMsg(int failMsg);

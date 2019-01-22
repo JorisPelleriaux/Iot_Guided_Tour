@@ -40,7 +40,7 @@
 #define ACTIVE              1
 #define SEND_LORA           1
 #define SEND_D7             0
-struct PayloadPackage{
+struct PayloadPackage {
     uint32_t length;
     uint8_t data[];
 };
@@ -55,7 +55,7 @@ static lsm303agr_3d_data_t acc_value;
 static xtimer_ticks32_t last_measured_sleep_time;
 static xtimer_ticks32_t last_measured_send_time;
 static xtimer_ticks32_t last_measured_interrupt_time;
-static int mode;                                                                    
+static int mode;
 static int send_mode;
 static uint32_t time_now;
 static kernel_pid_t pid;
@@ -72,18 +72,16 @@ i2c_t DEV = I2C_DEV(1);
  * 
  * @note    Switch between ACTIVE mode and SLEEP mode
  */
-static void acc_callback(void *arg)
-{
+static void acc_callback(void *arg) {
     (void) arg;
 
     puts("Motion detected");
-  
+
     // Only reset the sleeptimer is two sequent movements are inside an interval of MOTION_INTERVAL
-    if (xtimer_less( xtimer_diff(xtimer_now(), last_measured_interrupt_time), xtimer_ticks_from_usec(MOTION_INTERVAL)))
-    {
+    if (xtimer_less(xtimer_diff(xtimer_now(), last_measured_interrupt_time), xtimer_ticks_from_usec(MOTION_INTERVAL))) {
         puts("Switch to active mode");
         last_measured_sleep_time = xtimer_now();
-        
+
     }
 
     last_measured_interrupt_time = xtimer_now();
@@ -94,22 +92,18 @@ static void acc_callback(void *arg)
  * 
  * @note    Switch between LoRa send_mode and D7 send_mode
  */
-static void BTN_callback(void *arg)
-{
+static void BTN_callback(void *arg) {
     (void) arg;
 
     uint32_t time_start = xtimer_now_usec();
 
-    if (time_start-time_now > 500000)         //ignore bounce of push button for 500ms
-    {	
-        send_mode ^= 1;    
-        
-        if (send_mode == SEND_D7)
-        {
+    if (time_start - time_now > 500000)         //ignore bounce of push button for 500ms
+    {
+        send_mode ^= 1;
+
+        if (send_mode == SEND_D7) {
             puts("Send mode: D7");
-        }
-        else
-        {
+        } else {
             puts("Send mode: LoRa");
         }
     }
@@ -123,22 +117,19 @@ static void BTN_callback(void *arg)
  * 
  * @note    Sends the LoRa or D7 message
  */
-static void *thread_handler(void *arg)
-{
+static void *thread_handler(void *arg) {
     (void) arg;
     struct PayloadPackage *payloadPackage = arg;
-    
+
     // Send via LoRa
-    if(send_mode == SEND_LORA)
-    {
+    if (send_mode == SEND_LORA) {
         // ---------------------
         puts("LoRa msg");
         LoRa_send(payloadPackage->data, payloadPackage->length);
         // ---------------------
     }
     // Send via D7
-    if(send_mode == SEND_D7)
-    {
+    if (send_mode == SEND_D7) {
         // ---------------------
         puts("D7 msg");
         D7_send(payloadPackage->data, payloadPackage->length);
@@ -158,12 +149,11 @@ static void *thread_handler(void *arg)
  * 
  * @note    Take a single measurement with the accelerometer
  */
-int acc_measurement(void)
-{
+int acc_measurement(void) {
     lsm303agr_read_acc(&dev, &acc_value);
     printf("Accelerometer x: %i y: %i z: %i\n", acc_value.x_axis,
-                                                acc_value.y_axis,
-                                                acc_value.z_axis);
+           acc_value.y_axis,
+           acc_value.z_axis);
     return 0;
 }
 
@@ -172,15 +162,12 @@ int acc_measurement(void)
  * 
  * @note    Configure the lsm303agr sensor (accelerometer) 
  */
-void configuration_lsm303agr(void)
-{
-    if(lsm303agr_init(&dev, &lsm303agr_params[0]) != 0)
-    {
+void configuration_lsm303agr(void) {
+    if (lsm303agr_init(&dev, &lsm303agr_params[0]) != 0) {
         puts("Init not completed");
     }
 
-    if(lsm303agr_enable_interrupt_1(&dev) != 0)
-    {
+    if (lsm303agr_enable_interrupt_1(&dev) != 0) {
         puts("Interrupt not enabled");
     }
 }
@@ -189,13 +176,11 @@ void configuration_lsm303agr(void)
  * @name    Configure the button interrupt
  *
  */
-int configuration_button_interrupt(void)
-{
+int configuration_button_interrupt(void) {
     // Check param boards\octa\include\board.h
 
     // BTN1_MODE: input, pull-down
-    if (gpio_init_int(GPIO_PIN(PORT_G, 0), GPIO_IN , GPIO_RISING, BTN_callback, (void *) 0) < 0) 
-    {
+    if (gpio_init_int(GPIO_PIN(PORT_G, 0), GPIO_IN, GPIO_RISING, BTN_callback, (void *) 0) < 0) {
         puts("[FAILED] init BTN1!");
         return 0;
     }
@@ -209,11 +194,9 @@ int configuration_button_interrupt(void)
  * @name    Configure the lsm303agr interrupt
  *
  */
-int configuration_lsm303agr_interrupt(void)
-{
+int configuration_lsm303agr_interrupt(void) {
     // GPIO_IN: input, no pull
-    if (gpio_init_int(GPIO_PIN(PORT_B, 13), GPIO_IN , GPIO_RISING, acc_callback, (void*) 0) < 0) 
-    {
+    if (gpio_init_int(GPIO_PIN(PORT_B, 13), GPIO_IN, GPIO_RISING, acc_callback, (void *) 0) < 0) {
         puts("[FAILED] init lsm303agr!");
         return 0;
     }
@@ -227,11 +210,10 @@ int configuration_lsm303agr_interrupt(void)
  * Main loop
  * -------------------------------------------------------------------------------------------------------------------------------------------
  */
- 
-int main(void)
-{
+
+int main(void) {
     //----------Program initialization----------//
-    
+
     mode = ACTIVE;
     send_mode = SEND_D7;
     configuration_lsm303agr();
@@ -251,8 +233,6 @@ int main(void)
 
     // GPS vars
     struct XM1110_output_buffer gpsOutputBuffer;
-    float gps_latitude;
-    float gps_longitude;
 
     // LoRa vars
     struct PayloadPackage *lora_pkg = malloc(sizeof *lora_pkg);
@@ -261,52 +241,35 @@ int main(void)
     // D7 vars
     struct PayloadPackage *d7_pkg = malloc(sizeof *d7_pkg);
     d7_pkg->length = 8;
-    
+
     //---------------Program loop---------------//
-    while(1) 
-    {
+    while (1) {
         // Check mode and sleep if (time - last_measured_sleep_time) > TIME_TO_SLEEP
-        if ( xtimer_less( xtimer_diff(xtimer_now(), last_measured_sleep_time), xtimer_ticks_from_usec(TIME_TO_SLEEP) ) )
-        {
+        if (xtimer_less(xtimer_diff(xtimer_now(), last_measured_sleep_time), xtimer_ticks_from_usec(TIME_TO_SLEEP))) {
             mode = ACTIVE;
 
             // Send data if (time - last_measured_send_time) > TIME_TO_SEND
-            if ( !( xtimer_less( xtimer_diff(xtimer_now(), last_measured_send_time), xtimer_ticks_from_usec(TIME_TO_SEND) ) ) )
-            {    
+            if (!(xtimer_less(xtimer_diff(xtimer_now(), last_measured_send_time),
+                              xtimer_ticks_from_usec(TIME_TO_SEND)))) {
                 // Reset send_time
                 last_measured_send_time = xtimer_now();
 
-                if (send_mode == SEND_LORA)
-                {
-                 read_sensor(DEV, &gpsOutputBuffer);
-                 if (isnan(gpsOutputBuffer.latitude) && isnan(gpsOutputBuffer.longitude))
-                 {
-                    // No fix from the GPS module => send dummy data
-//                    printf("[GPS] - No fix - no coord print --- %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
-//                    printf("[GPS] - No fix - no coord check --- %d , %d \n", isnan(gpsOutputBuffer.latitude), isnan(gpsOutputBuffer.longitude));
-                    gps_latitude = 51.177327;
-                    gps_longitude = 4.416928;
-                 }
-                 else
-                 {
-                    // Fix from GPS module => send actual data
-//                    printf("[GPS] - Coords %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
-                    gps_latitude = gpsOutputBuffer.latitude;
-                    gps_longitude = gpsOutputBuffer.longitude;
-                 }
+                if (send_mode == SEND_LORA) {
+                    read_sensor(DEV, &gpsOutputBuffer);
 
-                 // Payload formation
-                 int32_t gps_latitude_payload = round(gps_latitude * 1000000);
-                 lora_pkg->data[0] = (gps_latitude_payload & 0xFF000000) >> 24;
-                 lora_pkg->data[1] = (gps_latitude_payload & 0x00FF0000) >> 16;
-                 lora_pkg->data[2] = (gps_latitude_payload & 0x0000FF00) >> 8;
-                 lora_pkg->data[3] = (gps_latitude_payload & 0X000000FF);
+                    // Payload formation
+//                 printf("[GPS] - Coords %f N, %f E\n", gpsOutputBuffer.latitude, gpsOutputBuffer.longitude);
+                    int32_t gps_latitude_payload = round(gpsOutputBuffer.latitude * 1000000);
+                    lora_pkg->data[0] = (gps_latitude_payload & 0xFF000000) >> 24;
+                    lora_pkg->data[1] = (gps_latitude_payload & 0x00FF0000) >> 16;
+                    lora_pkg->data[2] = (gps_latitude_payload & 0x0000FF00) >> 8;
+                    lora_pkg->data[3] = (gps_latitude_payload & 0X000000FF);
 
-                 int32_t gps_longitude_payload = round(gps_longitude * 1000000);
-                 lora_pkg->data[4] = (gps_longitude_payload & 0xFF000000) >> 24;
-                 lora_pkg->data[5] = (gps_longitude_payload & 0x00FF0000) >> 16;
-                 lora_pkg->data[6] = (gps_longitude_payload & 0x0000FF00) >> 8;
-                 lora_pkg->data[7] = (gps_longitude_payload & 0X000000FF);
+                    int32_t gps_longitude_payload = round(gpsOutputBuffer.longitude * 1000000);
+                    lora_pkg->data[4] = (gps_longitude_payload & 0xFF000000) >> 24;
+                    lora_pkg->data[5] = (gps_longitude_payload & 0x00FF0000) >> 16;
+                    lora_pkg->data[6] = (gps_longitude_payload & 0x0000FF00) >> 8;
+                    lora_pkg->data[7] = (gps_longitude_payload & 0X000000FF);
 
                     // thread_create (char *stack, int stacksize, char priority, int flags, thread_task_func_t task_func, void *arg, const char *name)
                     pid = thread_create(thread_stack, sizeof(thread_stack),
@@ -314,9 +277,7 @@ int main(void)
                                         0,
                                         thread_handler,
                                         lora_pkg, "send thread");
-                }
-                else
-                {
+                } else {
                     pid = thread_create(thread_stack, sizeof(thread_stack),
                                         THREAD_PRIORITY_MAIN - 1,
                                         0,
@@ -325,11 +286,8 @@ int main(void)
                 }
             }
 
-        }
-        else
-        {
-            if (mode == ACTIVE)
-            {
+        } else {
+            if (mode == ACTIVE) {
                 mode = SLEEP;
                 puts("Sleeping");
                 //pm_set_lowest();
