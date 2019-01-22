@@ -20,7 +20,7 @@ class Device:
         self.localization = Localization('127.0.0.1', 'FingerprintDB', 'DataSet')
         self.device_id = '4933323400370020'
         self.processor = threading.Thread()  # empty thread
-        self.training = True
+        self.training = False
 
         self.x_training = 1
         self.y_training = 0
@@ -40,7 +40,6 @@ class Device:
         self.tb = Thingsboard(keys['thingsboard']['url'], 1883, keys['thingsboard']['access_token'])
 
     def on_message(self, client, userdata, msg):
-        self.queue_d7 = {}
         raw = str(msg.payload.decode('utf-8'))
         topic = msg.topic.split("/")
         hardware_id = topic[2]
@@ -57,15 +56,15 @@ class Device:
         print('Thread started')
 
     def process_data_counter(self, data, device_id):
-        time.sleep(1)
-
+        time.sleep(3)
+        print('queue', self.queue_d7)
         #training mode
         if self.training:
             self.localization.training(self.x_training, self.y_training, self.queue_d7)
             print('added to DB')
 
         #localize mode
-        location = self.localization.localize(self.queue_d7, 8) #k-nearest
+        location = self.localization.localize(self.queue_d7, 20) #k-nearest
         print ('Location is approximately x: ' + str(location['x']) + ', ' + 'y: ' + str(location['y']))
 
         if not self.training:
@@ -75,7 +74,7 @@ class Device:
 
     def data_to_tb(self, device_id, location):
         print('Sending data to ThingsBoard')
-        tb_telemetry = { 'x': float(location['x']),'y': float(location['y'])}
+        tb_telemetry = {'x': float(location['x']),'y': float(location['y']), 'gateways': len(self.queue_d7)}
 
         current_ts_ms = int(round(time.time() * 1000))  # current timestamp in milliseconds, needed for Thingsboard
         self.tb.sendDeviceTelemetry(device_id, current_ts_ms, tb_telemetry)
