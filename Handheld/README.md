@@ -25,7 +25,7 @@ This project needs following files and libraries:
         - make a new file in sys/auto_init/saul/auto_init_<driver>.c
 
 [ ] GPS
-    In the following file boards\octa\include\periph_conf.h, replace by
+    In the following file boards\octa\include\periph_conf.h, add the following code in the right section
         static const i2c_conf_t i2c_config[] = {
         {
             .dev            = I2C2,
@@ -39,3 +39,13 @@ This project needs following files and libraries:
             .irqn           = I2C2_EV_IRQn
         }
         };
+    Go to the Things Network and under 'payload formats' in the application tab, add the following code
+        function Decoder(bytes, port) {
+        var gps_latitude = ((bytes[4]) << 24) + ((bytes[5]) << 16) + ((bytes[6]) << :sunglasses: + ((bytes[7]));
+        var gps_longitude = ((bytes[8]) << 24) + ((bytes[9]) << 16) + ((bytes[10]) << :sunglasses: + ((bytes[11]));
+
+        return{
+        gps_latitude: gps_latitude/1000000,
+        gps_longitude: gps_longitude/1000000
+        };
+        }
