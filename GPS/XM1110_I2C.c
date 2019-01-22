@@ -53,16 +53,18 @@ void read_sensor(i2c_t DEV, struct XM1110_output_buffer *outputBuffer) {
     }
     i2c_release(DEV);
 
+//    printf("[GPS] full buffer: %s\n", i2cBuffer);
+
     char *sentence = searchNMEAType(i2cBuffer, MINMEA_SENTENCE_RMC);
     printf("[GPS] - Sentence=%s\n", sentence);
     struct minmea_sentence_rmc frame;
     minmea_parse_rmc(&frame, sentence);
     outputBuffer->latitude = minmea_tocoord(&frame.latitude);
     outputBuffer->longitude = minmea_tocoord(&frame.longitude);
-//    printf("$RMC floating point degree coordinates and speed: (%f N, %f E) %f\n",
-//           minmea_tocoord(&frame.latitude),
-//           minmea_tocoord(&frame.longitude),
-//           minmea_tofloat(&frame.speed));
+    printf("$RMC floating point degree coordinates and speed: (%f N, %f E) %f\n",
+           minmea_tocoord(&frame.latitude),
+           minmea_tocoord(&frame.longitude),
+           minmea_tofloat(&frame.speed));
 }
 
 /**
@@ -134,14 +136,22 @@ void decodeNMEA(char *sentence) {
 char *searchNMEAType(char *bufferInput, enum minmea_sentence_id sentence_id) {
 //    printf("Started queue parser\n");
     const char DELIM[2] = "\n";                         // The string to split each sentence on
-    char *sentence;
-    sentence = strtok(bufferInput, DELIM);              // Split the message up in sentences (tokens)
-    while (sentence != NULL) {                          // Keep processing as long as there are tokens left
+    char *token;
+    token = strtok(bufferInput, DELIM);                 // Split the message up in sentences (tokens)
+
+
+    while (token != NULL) {                          // Keep processing as long as there are tokens left
+        char *sentence = (char *) calloc(strlen(token),sizeof(char));
+        strncpy(sentence,token,strlen(token)-1);
+//        printf("[GPS] token lengths %d vs %d\n", strlen(token), strlen(sentence));
+//        printf("[GPS] sentence %s\n", sentence);
+//        printf("[GPS] sentence check %d\n", minmea_sentence_id(sentence, false));
         if (minmea_sentence_id(sentence, false) == sentence_id) {
             return sentence;                            // Return the valid sentence
         } else {
-            sentence = strtok(NULL, DELIM);             // Continue processing
+            token = strtok(NULL, DELIM);             // Continue processing
         }
     }
+
     return "-1";                                        // Return -1 if nothing found
 }

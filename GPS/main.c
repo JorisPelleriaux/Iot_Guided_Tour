@@ -73,8 +73,8 @@ int main(void)
 
 
     while(1) {
-        printf("[LoRa] - Sending msg with counter %i\n", counter);
-        uint32_t start = xtimer_now_usec();
+//        printf("[LoRa] - Sending msg with counter %i\n", counter);
+//        uint32_t start = xtimer_now_usec();
 
         /////////////////////
         // Read the GPS sensor
@@ -108,16 +108,17 @@ int main(void)
         /////////////////////
         // Data transmission
         /////////////////////
-        modem_status_t status = modem_send_unsolicited_response(0x40, 0, payload_length, payload, current_interface_id, current_interface_config);
-        uint32_t duration_usec = xtimer_now_usec() - start;
-        printf("[LoRa] - Command completed in %li ms\n", duration_usec / 1000);
-        if(status == MODEM_STATUS_COMMAND_COMPLETED_SUCCESS) {
-            printf("[LoRa] - Command completed successfully\n");
-        } else if(status == MODEM_STATUS_COMMAND_COMPLETED_ERROR) {
-            printf("[LoRa] - Command completed with error\n");
-        } else if(status == MODEM_STATUS_COMMAND_TIMEOUT) {
-            printf("[LoRa] - Command timed out\n");
-        }
+//        modem_status_t status =
+        modem_send_unsolicited_response(0x40, 0, payload_length, payload, current_interface_id, current_interface_config);
+//        uint32_t duration_usec = xtimer_now_usec() - start;
+//        printf("[LoRa] - Command completed in %li ms\n", duration_usec / 1000);
+//        if(status == MODEM_STATUS_COMMAND_COMPLETED_SUCCESS) {
+//            printf("[LoRa] - Command completed successfully\n");
+//        } else if(status == MODEM_STATUS_COMMAND_COMPLETED_ERROR) {
+//            printf("[LoRa] - Command completed with error\n");
+//        } else if(status == MODEM_STATUS_COMMAND_TIMEOUT) {
+//            printf("[LoRa] - Command timed out\n");
+//        }
 
         counter++;
         xtimer_periodic_wakeup(&last_wakeup, INTERVAL);

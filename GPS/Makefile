@@ -21,6 +21,7 @@ USEMODULE += ps
 USEMODULE += saul_default
 USEMODULE += xtimer
 USEMODULE += periph_gpio_irq
+USEMODULE += printf_float
 
 EXTERNAL_MODULE_DIRS += $(RIOTBASE)/../riot-oss7-modem/drivers/oss7_modem
 USEMODULE += oss7_modem
