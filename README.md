@@ -22,13 +22,39 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 * sierra wireless xm1110 (GNSS positioning module)
 * CMWX1ZZABZ (LPWAN wireless module)
 
+## Projectstructuur
+
+De repository is opgedeeld in volgende structuur
+  Repo
+    |_ README <- YOU ARE HERE
+    |_ Boards
+    |   \_ octa
+    |_ Drivers
+    |   \_ lsm303agr
+    |_ GPS
+    |   |_ MQTT
+    |   \_ Thingsboard
+    \_ Handheld
+        |_ README
+        |_ loara_d7
+        |_ main
+        \_ XM1110_I2C
+
+Onder /Handheld/README staat uitgeschreven hoe en waar de nodige libraries moeten geplaatst worden om het project te uit te voeren. 
+
 ## TODO
-- [ ] Fingerprinting (Joris)
-- [ ] GPS uitlezen (Arne)
-- [ ] Custom kaart in Thingsboard
-- [ ] Low Power emission in D7 en LoRa (Axel)
+- [ ] Museumvisualitatie
+- [ ] Merge D7, GPS tot 1 backend
+- [ ] Testen met 1 en meerdere devices
+- [ ] Documentatie project
+- [ ] Presentatie
+
+- [x] Fingerprinting (Joris)
+- [x] GPS uitlezen (Arne)
+- [x] Custom kaart in Thingsboard
+- [x] Low Power emission in D7 en LoRa (Axel)
 - [x] RFID onderzoek -> vervangen door button
-- [ ] README.md voor gebruik programma en projectstructuur
+- [x] README.md voor gebruik programma en projectstructuur
 - [x] Power measurements (Axel)
 - [x] database maken (MongoDB) (Joris)
 - [x] D7 berichten met pushbutton (Joris)
