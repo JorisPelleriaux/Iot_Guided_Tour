@@ -15,10 +15,12 @@ from AlpParser import parse_alp
 with open('keys.json') as f:
     keys = json.load(f)
 
+
 class Device:
     def __init__(self):
         self.localization = Localization('127.0.0.1', 'FingerprintDB', 'DataSet')
-        self.device_id = '493332340046001f'  # axel '493332340032001f', arne:493332340046001f, joris: 4933323400370020
+        self.device_id = ['493332340046001f', '493332340032001f',
+                          '4933323400370020']  # axel '493332340032001f', arne:493332340046001f, joris: 4933323400370020
         self.processor = threading.Thread()  # empty thread
         self.training = False
 
@@ -33,7 +35,7 @@ class Device:
 
             print('connecting to broker Dash-7')
             self.clientD7.connect("backend.idlab.uantwerpen.be", 1883, 60)
-            self.clientD7.subscribe('/d7/' + self.device_id + '/#')
+            self.clientD7.subscribe('/d7/#')
         except:
             print ('connection to Dash-7 failed')
 
@@ -55,17 +57,18 @@ class Device:
         topic = msg.topic.split("/")
         hardware_id = topic[2]
 
-        print(hardware_id)
-        gateway_id = topic[3]
-        dict = parse_alp(raw)
-        self.queue_d7[gateway_id] = int(dict['rx_level'])  # save rx_level for every receiving gateway
+        if hardware_id == self.device_id[0] or hardware_id == self.device_id[1] or hardware_id == self.device_id[2]:
+            print(hardware_id)
+            gateway_id = topic[3]
+            dict = parse_alp(raw)
+            self.queue_d7[gateway_id] = int(dict['rx_level'])  # save rx_level for every receiving gateway
 
-        if not self.processor.is_alive():
+            if not self.processor.is_alive():
+                print('Thread started')
+                self.processor = threading.Thread(target=self.process_data_counter, args=[hardware_id])
+                print('Thread created')
+                self.processor.start()
             print('Thread started')
-            self.processor = threading.Thread(target=self.process_data_counter, args=[hardware_id])
-            print('Thread created')
-            self.processor.start()
-        print('Thread started')
 
     def on_messageLora(self, client, userdata, message):
         print("lora ontvangen")
@@ -104,8 +107,18 @@ class Device:
         else:
             print ('Not enough gateways to determine the location')
 
+        if device_id == '493332340032001f':
+            print('dash7-axel')
+            device = 'iot_guide_axel'
+        if device_id == '493332340046001f':
+            print('dash7-arne')
+            device = 'iot_guide_arne'
+        if device_id == '4933323400370020':
+            print('dash7-joris')
+            device = 'iot_guide_joris'
+
         if not self.training & len(self.queue_d7) >= 3:  # estimate location if not training, 3 or more gateways
-            self.data_to_tb(device_id, location)  # change to device_id'IoT_Tour_Joris'
+            self.data_to_tb(device, location)  # change to device_id'IoT_Tour_Joris'
 
         self.queue_d7 = {}  # clear queue
 
