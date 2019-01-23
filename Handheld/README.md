@@ -14,7 +14,7 @@ This project needs following files and libraries:
 **lsm303agr**  
     This drivermap can be found under Drivers and has to be placed in the RIOT/drivers directory.   
     REMARK: place lms303agr.h in RIOT/drivers/include directory  
-    Find the following files in RIOT/drivers and add a new section for the lsm303agr driver  
+    Find the following files in RIOT/drivers and add a new section for the lsm303agr driver 
         - Makefile.dep  
 	    - Makefile.include  
     As last but not least   

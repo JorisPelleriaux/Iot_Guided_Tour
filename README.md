@@ -32,33 +32,24 @@ De repository is opgedeeld in volgende structuur
 |   └── octa  
 ├── Drivers  
 |   └── lsm303agr  
-├── GPS  
-|   ├── MQTT  
-|   └── Thingsboard  
-└── Handheld  
-    ├── README  
-    ├── loara_d7  
-    ├── main  
-    └── XM1110_I2C  
+├── Database  
+|   ├── FingerprintDB  
+├── Handheld  
+|   ├── README  
+|   ├── loara_d7  
+|   ├── main  
+|   └── XM1110_I2C  
+├── AlpParser.py
+├── device.py
+├── localization.py
+└── thingsboard.py
+
 ```
-Onder /Handheld/README staat uitgeschreven hoe en waar de nodige libraries moeten geplaatst worden om het project te uit te voeren. 
 
-## TODO
-- [ ] Museumvisualitatie
-- [ ] Merge D7, GPS tot 1 backend
-- [ ] Testen met 1 en meerdere devices
-- [ ] Documentatie project
-- [ ] Presentatie
-- [ ] README voor backend (oa virtual env usage)
+De backend wordt gestart met het device.py-script. Deze gebruikt AlpParser.py om D7 berichten te parsen, localization.py om het localisatiealgoritme uit te voeren en thingsboard.py als API van thingsboard.
 
-- [x] Fingerprinting (Joris)
-- [x] GPS uitlezen (Arne)
-- [x] Custom kaart in Thingsboard
-- [x] Low Power emission in D7 en LoRa (Axel)
-- [x] RFID onderzoek -> vervangen door button
-- [x] README.md voor gebruik programma en projectstructuur
-- [x] Power measurements (Axel)
-- [x] database maken (MongoDB) (Joris)
-- [x] D7 berichten met pushbutton (Joris)
-- [x] Accelerometer (Axel)
-- [x] Kaart fingerprinting maken (Axel)
+De handheldapplicatie kan gevonden worden onder Handheld. Daar staat uitgeschreven hoe en waar de nodige libraries moeten geplaatst worden om het project te uit te voeren. 
+
+Onder Database kan men de gebruikte database voor het fingerprintingproces terugvinden.
+
+Boards en Drivers bevatten bestanden die moeten gekopiëerd worden naar de aangewezen locaties die omschreven staan in Handheld/README.md.
