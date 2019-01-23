@@ -15,12 +15,6 @@ from AlpParser import parse_alp
 with open('keys.json') as f:
     keys = json.load(f)
 
-#####################
-## Constants
-#####################
-app_id = "gps_nxt"
-
-
 class Device:
     def __init__(self):
         self.localization = Localization('127.0.0.1', 'FingerprintDB', 'DataSet')
@@ -46,7 +40,7 @@ class Device:
         # Subscribe to Lora
         try:
             self.clientLora = mqtt.Client('Lora')  # create new instance
-            self.clientLora.username_pw_set(app_id, password=keys['ttn']['access_key'])
+            self.clientLora.username_pw_set(keys['ttn']['app_id'], password=keys['ttn']['access_key'])
             self.clientLora.on_message = self.on_messageLora  # attach function to callback
             print("connecting to broker Lora")
             self.clientLora.connect(keys['ttn']['broker_address'])  # connect to broker
@@ -60,10 +54,10 @@ class Device:
         raw = str(msg.payload.decode('utf-8'))
         topic = msg.topic.split("/")
         hardware_id = topic[2]
+
         print(hardware_id)
         gateway_id = topic[3]
         dict = parse_alp(raw)
-        print (dict)  # testing
         self.queue_d7[gateway_id] = int(dict['rx_level'])  # save rx_level for every receiving gateway
 
         if not self.processor.is_alive():
@@ -74,6 +68,7 @@ class Device:
         print('Thread started')
 
     def on_messageLora(self, client, userdata, message):
+        print("lora ontvangen")
         msgDec = json.loads(message.payload.decode("utf-8"))
         # print("message received ", str(message.payload.decode("utf-8")))
         payloadFields = msgDec["payload_fields"]
@@ -84,13 +79,14 @@ class Device:
         print("Telemetry: ", tb_telemetry)
         current_ts_ms = int(round(time.time() * 1000))  # current timestamp in milliseconds, needed for Thingsboard
         # tbDeviceID = msgDec["dev_id"]
+        print("Dev-id: ", msgDec["dev_id"])
 
-        self.tb.sendDeviceTelemetry(keys['ttn']['tbDeviceID'], current_ts_ms, tb_telemetry)
+        self.tb.sendDeviceTelemetry(msgDec["dev_id"], current_ts_ms, tb_telemetry)
 
         # send non-numeric data ('attributes') to Thingsboard as JSON. Example:
         tb_attributes = {'last_data_rate': str(msgDec['metadata']['data_rate'])}
         # print("Attributes", tb_attributes)
-        self.tb.sendDeviceAttributes(keys['ttn']['tbDeviceID'], tb_attributes)
+        self.tb.sendDeviceAttributes(msgDec["dev_id"], tb_attributes)
 
     def process_data_counter(self, device_id):
         time.sleep(3)
@@ -103,13 +99,13 @@ class Device:
         # localize mode
         print ('ontvangen door ' + str(len(self.queue_d7)))
         if len(self.queue_d7) >= 3:
-            location = self.localization.localize(self.queue_d7, 10)  # k-nearest
+            location = self.localization.localize(self.queue_d7, 25)  # k-nearest
             print ('Location is approximately x: ' + str(location['x']) + ', ' + 'y: ' + str(location['y']))
         else:
             print ('Not enough gateways to determine the location')
 
         if not self.training & len(self.queue_d7) >= 3:  # estimate location if not training, 3 or more gateways
-            self.data_to_tb(keys['ttn']['tbDeviceID'], location)  # change to device_id'IoT_Tour_Joris'
+            self.data_to_tb(device_id, location)  # change to device_id'IoT_Tour_Joris'
 
         self.queue_d7 = {}  # clear queue
 
