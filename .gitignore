@@ -2,4 +2,5 @@
 /.idea/
 /GPS/bin/
 /Handheld/bin/
+/Handheld/keys.h
 *.pyc
