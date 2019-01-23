@@ -25,6 +25,7 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 ## Projectstructuur
 
 De repository is opgedeeld in volgende structuur
+```bash
 .
 ├── README <- YOU ARE HERE  
 ├── Boards  
@@ -39,7 +40,7 @@ De repository is opgedeeld in volgende structuur
     ├── loara_d7  
     ├── main  
     └── XM1110_I2C  
-
+```
 Onder /Handheld/README staat uitgeschreven hoe en waar de nodige libraries moeten geplaatst worden om het project te uit te voeren. 
 
 ## TODO
