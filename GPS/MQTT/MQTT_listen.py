@@ -12,21 +12,24 @@ import time
 import time
 import json
 
+with open('../../keys.json') as f:
+    keys = json.load(f)
+
 # http://www.steves-internet-guide.com/into-mqtt-python-client/
 
 #####################
 ## Constants
 #####################
 app_id = "gps_nxt"
-access_key = "ttn-account-v2.ODS_7P5rFOgY5X9qMrkBj0ftUhvbYCyTyks56syDHc4"
+access_key = keys['ttn']['access_key']
 broker_address = "eu.thethings.network"
 tbBroker = "thingsboard.idlab.uantwerpen.be"
 tbPort = 1883
-tbAccessToken = "ODvYloOuCa514CgP2ZaZ"
-tbDeviceID = "IoT_Tour_Arne"
+tbAccessToken = keys['ttn']['tbAccessToken']
+tbDeviceID = keys['ttn']['tbDeviceID']
 
 
-def on_message(client, userdata, message):
+def on_messageLora(client, userdata, message):
     msgDec = json.loads(message.payload.decode("utf-8"))
     # print("message received ", str(message.payload.decode("utf-8")))
     payloadFields = msgDec["payload_fields"]
@@ -56,7 +59,7 @@ tb = Thingsboard(tbBroker, tbPort, tbAccessToken)
 
 client = mqtt.Client("Nxt-1")  # create new instance
 client.username_pw_set(app_id, password=access_key)
-client.on_message = on_message  # attach function to callback
+client.on_message = on_messageLora  # attach function to callback
 print("connecting to broker")
 client.connect(broker_address)  # connect to broker
 

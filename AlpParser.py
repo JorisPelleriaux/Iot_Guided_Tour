@@ -1,6 +1,3 @@
-import sys
-
-sys.path.insert(0, 'C:\pyd7a')
 from bitstring import ConstBitStream
 from pyd7a.d7a.alp.parser import Parser as AlpParser
 
