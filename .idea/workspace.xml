@@ -68,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/device.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="292">
@@ -80,7 +80,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Handheld/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -132,17 +132,6 @@
             <path>
               <item name="Iot_Guided_Tour" type="b2602c69:ProjectViewProjectNode" />
               <item name="Iot_Guided_Tour" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Iot_Guided_Tour" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Iot_Guided_Tour" type="462c0819:PsiDirectoryNode" />
-              <item name="GPS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Iot_Guided_Tour" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Iot_Guided_Tour" type="462c0819:PsiDirectoryNode" />
-              <item name="GPS" type="462c0819:PsiDirectoryNode" />
-              <item name="MQTT" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Iot_Guided_Tour" type="b2602c69:ProjectViewProjectNode" />
@@ -240,7 +229,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -302,6 +291,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Handheld/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/device.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -309,14 +306,6 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handheld/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
         </state>
       </provider>
     </entry>
