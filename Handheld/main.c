@@ -240,7 +240,7 @@ int main(void) {
 
     // D7 vars
     struct PayloadPackage *d7_pkg = malloc(sizeof *d7_pkg);
-    d7_pkg->length = 8;
+    d7_pkg->length = 1;
 
     //---------------Program loop---------------//
     while (1) {
