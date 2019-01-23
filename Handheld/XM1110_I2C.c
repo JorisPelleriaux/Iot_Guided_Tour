@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <math.h>
 
 #include "board.h"
 
@@ -58,23 +59,25 @@ void read_sensor(i2c_t DEV, struct XM1110_output_buffer *outputBuffer) {
     char *sentence = searchNMEAType(i2cBuffer, MINMEA_SENTENCE_RMC);
 //    printf("[GPS] - Sentence=%s\n", sentence);
     struct minmea_sentence_rmc frame;
-    if (strcmp(sentence, "-1") == 0) {
+    if ((strcmp(sentence, "-1") == 0) || isnan(minmea_tocoord(&frame.latitude)) || isnan(minmea_tocoord(&frame.longitude))) {
 //        printf("GPS -- NO FIX");
-        // No fix from the GPS module => send dummy data
+        // No fix from the GPS module OR not a complete sentence found => send dummy data
         outputBuffer->latitude = NO_FIX_LAT;
         outputBuffer->longitude = NO_FIX_LONG;
         outputBuffer->isValid = false;
     } else {
 //        printf("GPS -- FIX");
+        printf("[GPS] - Sentence=%s\n", sentence);
         // Fix from GPS module => send actual data
         minmea_parse_rmc(&frame, sentence);
         outputBuffer->latitude = minmea_tocoord(&frame.latitude);
         outputBuffer->longitude = minmea_tocoord(&frame.longitude);
         outputBuffer->isValid = true;
-//        printf("$RMC floating point degree coordinates and speed: (%f N, %f E) %f\n",
-//               minmea_tocoord(&frame.latitude),
-//               minmea_tocoord(&frame.longitude),
-//               minmea_tofloat(&frame.speed));
+        printf("$RMC floating point degree coordinates and speed: (%f N, %f E) %f\n",
+               minmea_tocoord(&frame.latitude),
+               minmea_tocoord(&frame.longitude),
+               minmea_tofloat(&frame.speed));
+        printf("Check: %d, %d\n", isnan(minmea_tocoord(&frame.latitude)), isnan(minmea_tocoord(&frame.longitude)));
     }
 }
 
