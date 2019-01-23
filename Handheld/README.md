@@ -5,7 +5,11 @@ This project needs following files and libraries:
     
 [ ] riot-oss7-modem
     Via GitHub https://github.com/MOSAIC-LoPoW/riot-oss7-modem.git
-    The map has to be placed next to the RIOT-students folder
+    The map has to be placed NEXT to the RIOT-students folder
+
+[ ] pyd7a
+    Via GitHub https://github.com/MOSAIC-LoPoW/pyd7a.git
+    The map has to be placed IN the RIOT-students folder
 
 [ ] lsm303agr
     This drivermap can be found under Drivers and has to be placed in the RIOT/drivers directory. 

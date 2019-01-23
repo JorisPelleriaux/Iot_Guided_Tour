@@ -1,0 +1,6 @@
+//KEYS LoRa
+ #define LORAWAN_NETW_SESSION_KEY  
+ #define LORAWAN_APP_SESSION_KEY  
+ #define LORAWAN_DEV_ADDR 
+ #define LORAWAN_NETW_ID 
+

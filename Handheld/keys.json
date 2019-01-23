@@ -1,0 +1,12 @@
+{
+  "thingsboard": {
+    "url": "",
+    "access_token": ""
+  },
+  "ttn": {
+	"access_key": "",
+	"tbAccessToken": "",
+  "tbDeviceID": ""
+  }
+
+}
