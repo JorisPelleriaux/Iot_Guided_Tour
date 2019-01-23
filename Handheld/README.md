@@ -18,7 +18,7 @@ This project needs following files and libraries:
         - Makefile.dep
 	    - Makefile.include
     As last but not least 
-        - add a section  for the driver in sys/auto_init/auto_init.c
+        - add a section for the driver in sys/auto_init/auto_init.c
         - make a new file in sys/auto_init/saul/auto_init_<driver>.c
 
 [ ] GPS
@@ -32,6 +32,9 @@ This project needs following files and libraries:
         gps_longitude: gps_longitude/1000000
         };
         }
+
+[ ] Keys
+    Before you can connenct with the things network, the keys.h-file needs to be filled with valid keys. You can find them on the things network.
 
 [ ] Flash
     Now you can flash the project with the following command:
