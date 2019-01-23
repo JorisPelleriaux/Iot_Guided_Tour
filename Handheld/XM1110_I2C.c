@@ -67,17 +67,17 @@ void read_sensor(i2c_t DEV, struct XM1110_output_buffer *outputBuffer) {
         outputBuffer->isValid = false;
     } else {
 //        printf("GPS -- FIX");
-        printf("[GPS] - Sentence=%s\n", sentence);
+//        printf("[GPS] - Sentence=%s\n", sentence);
         // Fix from GPS module => send actual data
         minmea_parse_rmc(&frame, sentence);
         outputBuffer->latitude = minmea_tocoord(&frame.latitude);
         outputBuffer->longitude = minmea_tocoord(&frame.longitude);
         outputBuffer->isValid = true;
-        printf("$RMC floating point degree coordinates and speed: (%f N, %f E) %f\n",
-               minmea_tocoord(&frame.latitude),
-               minmea_tocoord(&frame.longitude),
-               minmea_tofloat(&frame.speed));
-        printf("Check: %d, %d\n", isnan(minmea_tocoord(&frame.latitude)), isnan(minmea_tocoord(&frame.longitude)));
+//        printf("$RMC floating point degree coordinates and speed: (%f N, %f E) %f\n",
+//               minmea_tocoord(&frame.latitude),
+//               minmea_tocoord(&frame.longitude),
+//               minmea_tofloat(&frame.speed));
+//        printf("Check: %d, %d\n", isnan(minmea_tocoord(&frame.latitude)), isnan(minmea_tocoord(&frame.longitude)));
     }
 }
 
