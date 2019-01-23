@@ -25,20 +25,20 @@ Door gebrek aan LoRa-Gateways in onze omgeving zijn we niet in staat om op grote
 ## Projectstructuur
 
 De repository is opgedeeld in volgende structuur
-  Repo
-    |_ README <- YOU ARE HERE
-    |_ Boards
-    |   \_ octa
-    |_ Drivers
-    |   \_ lsm303agr
-    |_ GPS
-    |   |_ MQTT
-    |   \_ Thingsboard
-    \_ Handheld
-        |_ README
-        |_ loara_d7
-        |_ main
-        \_ XM1110_I2C
+.
+├── README <- YOU ARE HERE  
+├── Boards  
+|   └── octa  
+├── Drivers  
+|   └── lsm303agr  
+├── GPS  
+|   ├── MQTT  
+|   └── Thingsboard  
+└── Handheld  
+    ├── README  
+    ├── loara_d7  
+    ├── main  
+    └── XM1110_I2C  
 
 Onder /Handheld/README staat uitgeschreven hoe en waar de nodige libraries moeten geplaatst worden om het project te uit te voeren. 
 
