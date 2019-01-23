@@ -5,6 +5,7 @@ from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
+
 class Thingsboard():
     def __init__(self, broker, port, token, mqttCallbackFunction=None, persistData=True, heartbeat_interval_seconds=5):
         self.gwReportTimeout = heartbeat_interval_seconds
@@ -21,7 +22,7 @@ class Thingsboard():
             self.gw_attributes_queue = []
             self.device_telemetry_queue = []
             self.device_attributes_queue = []
-            #TODO: set maximum queue sizes?
+            # TODO: set maximum queue sizes?
 
         try:
             self.connectMqtt()
@@ -101,7 +102,8 @@ class Thingsboard():
     def checkQueue(self):
         if not self.device_telemetry_queue and not self.gw_telemetry_queue and not self.device_attributes_queue and not self.gw_attributes_queue:
             return False
-        else: return True
+        else:
+            return True
 
     def flushQueues(self):
         for msg in self.gw_telemetry_queue: self.sendGwTelemetry(msg)

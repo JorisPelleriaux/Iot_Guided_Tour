@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 import numpy as np
 
+
 class Localization:
     gateway_ids = ['4337313400210032', '433731340023003d', '42373436001c0037', '463230390032003e']
 
@@ -15,7 +16,7 @@ class Localization:
         self.collection.insert_one(document)
 
     def localize(self, rx, k):
-        probablistic = []
+        probabilistic = []
         for document in self.collection.find():
             diff = []
             for gateway_id in self.gateway_ids:
@@ -25,12 +26,12 @@ class Localization:
                     document['gateways'][gateway_id] = 200  # out of range
                 diff.append(int(rx[gateway_id]) - int(document['gateways'][gateway_id]))
             rms = np.sqrt(np.mean(np.square(diff)))
-            probablistic.append({'x': document['x'], 'y': document['y'], 'rms': rms})
+            probabilistic.append({'x': document['x'], 'y': document['y'], 'rms': rms})
 
         # -------------------------
         # k-nearest neighbors
         # -------------------------
-        ordered_locations = sorted(probablistic, key=lambda i: i['rms'])  # sort on RMS value
+        ordered_locations = sorted(probabilistic, key=lambda i: i['rms'])  # sort on RMS value
         nearest_neighbors = ordered_locations[:k]
         # print('knn: '+str(nearest_neighbors))
 
