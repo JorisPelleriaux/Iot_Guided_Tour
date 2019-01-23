@@ -1,2 +1,5 @@
 /keys.json
 /.idea/
+/GPS/bin/
+/Handheld/bin/
+*.pyc
