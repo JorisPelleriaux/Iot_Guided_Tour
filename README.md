@@ -48,6 +48,7 @@ Onder /Handheld/README staat uitgeschreven hoe en waar de nodige libraries moete
 - [ ] Testen met 1 en meerdere devices
 - [ ] Documentatie project
 - [ ] Presentatie
+- [ ] README voor backend (oa virtual env usage)
 
 - [x] Fingerprinting (Joris)
 - [x] GPS uitlezen (Arne)
