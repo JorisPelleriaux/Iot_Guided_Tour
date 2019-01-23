@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd0f71f7-df44-4e02-89ad-91138d106b14" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlpParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlpParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GPS/MQTT/MQTT_listen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GPS/MQTT/MQTT_listen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/device.py" beforeDir="false" afterPath="$PROJECT_DIR$/device.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyd7a/d7a/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyd7a/d7a/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-column="9" />
+              <caret selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -293,7 +288,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-column="9" />
+          <caret selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
