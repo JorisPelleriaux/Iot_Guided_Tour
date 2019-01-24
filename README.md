@@ -39,14 +39,13 @@ De repository is opgedeeld in volgende structuur
 |   ├── loara_d7  
 |   ├── main  
 |   └── XM1110_I2C  
-├── AlpParser.py
 ├── device.py
 ├── localization.py
 └── thingsboard.py
 
 ```
 
-De backend wordt gestart met het device.py-script. Deze gebruikt AlpParser.py om D7 berichten te parsen, localization.py om het localisatiealgoritme uit te voeren en thingsboard.py als API van thingsboard.
+De backend wordt gestart met het device.py-script. Deze gebruikt localization.py om het localisatiealgoritme uit te voeren en thingsboard.py als API van thingsboard.
 
 De handheldapplicatie kan gevonden worden onder Handheld. Daar staat uitgeschreven hoe en waar de nodige libraries moeten geplaatst worden om het project te uit te voeren. 
 
