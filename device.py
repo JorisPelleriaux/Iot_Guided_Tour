@@ -5,7 +5,8 @@ import time
 import logging
 import json
 from thingsboard import Thingsboard
-from AlpParser import parse_alp
+from bitstring import ConstBitStream
+from pyd7a.d7a.alp.parser import Parser as AlpParser
 
 # Create global logger
 # logger = logging.getLogger('tb_example')
@@ -41,17 +42,23 @@ class Device:
         self.tb = Thingsboard(keys['thingsboard']['url'], 1883, keys['thingsboard']['access_token'])
 
     def on_message(self, client, userdata, msg):
-        raw = str(msg.payload.decode('utf-8'))
         topic = msg.topic.split("/")
+
+        # Decode message
+        decoded = []
+        payloadString = str(msg.payload)
+        payloadArray = bytearray(payloadString.decode("hex"))
+        payloadself = AlpParser().parse(ConstBitStream(payloadArray), len(payloadArray))
+
+        decoded.append(str(payloadself.interface_status.operand.interface_status.rx_level))
+
         hardware_id = topic[2]
         gateway_id = topic[3]
-        dict = parse_alp(raw)
-        print (dict)  # testing
-        self.queue_d7[gateway_id] = int(dict['rx_level'])  # save rx_level for every receiving gateway
+        self.queue_d7[gateway_id] = int(decoded[0])  # save rx_level for every receiving gateway
 
         if not self.processor.is_alive():
             print('Thread started')
-            self.processor = threading.Thread(target=self.process_data_counter, args=[dict['data'], hardware_id])
+            self.processor = threading.Thread(target=self.process_data_counter, args=[hardware_id])
             print('Thread created')
             self.processor.start()
         print('Thread started')

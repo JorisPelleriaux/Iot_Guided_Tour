@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Fingerprinting_test_v1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Handheld/bin/pkg/octa/minmea" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/pyd7a" vcs="Git" />
   </component>
 </project>

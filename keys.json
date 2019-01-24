@@ -1,0 +1,14 @@
+{
+  "thingsboard": {
+    "url": "thingsboard.idlab.uantwerpen.be",
+    "access_token": "ODvYloOuCa514CgP2ZaZ",
+	"tbDeviceID": "IoT_Tour_Arne"
+  },
+  "ttn": {
+	"access_key": "ttn-account-v2.JpWaV4YtsB__EMazjVDGCeXmh1aGiUVq9vPeuQYAC_8",
+	"acces_key_arne": "ttn-account-v2.ODS_7P5rFOgY5X9qMrkBj0ftUhvbYCyTyks56syDHc4",
+	"app_id": "iot_guided_tour",
+	"app_id_arne": "gps_nxt",
+	"broker_address": "eu.thethings.network"
+  }
+}
