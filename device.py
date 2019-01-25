@@ -20,7 +20,8 @@ with open('keys.json') as f:
 class Device:
     def __init__(self):
         self.localization = Localization('127.0.0.1', 'FingerprintDB', 'DataSet')
-        self.device_id = {'493332340046001f': 'iot_guide_arne', '493332340032001f': 'iot_guide_axel', '4933323400370020': 'iot_guide_joris'}
+        self.device_id = {'493332340046001f': 'iot_guide_arne', '493332340032001f': 'iot_guide_axel',
+                          '4933323400370020': 'iot_guide_joris'}
         self.processor = threading.Thread()  # empty thread for incoming messages
         self.training = False
 
@@ -57,8 +58,9 @@ class Device:
     def on_message_dash7(self, client, userdata, msg):
         topic = msg.topic.split("/")
         hardware_id = topic[2]
+        dev_ids = self.device_id.keys()
 
-        if hardware_id == self.device_id[0] or hardware_id == self.device_id[1] or hardware_id == self.device_id[2]:
+        if hardware_id == dev_ids[0] or hardware_id == dev_ids[1] or hardware_id == dev_ids[2]:
             # Decode message
             decoded = []
             payloadString = str(msg.payload)
@@ -103,9 +105,9 @@ class Device:
             logger.info('added to DB')
 
         # localize mode
-        logger.info('ontvangen door ' + str(len(self.queue_d7)))
+        logger.info('received by ' + str(len(self.queue_d7)) + ' gateways')
         if len(self.queue_d7) >= 3:
-            self.location = self.localization.localize(self.queue_d7, 25)  # k-nearest number
+            self.location = self.localization.localize(self.queue_d7, 43)  # k-nearest number
             logger.info(
                 'Location is approximately x: ' + str(self.location['x']) + ', ' + 'y: ' + str(self.location['y']))
         else:
